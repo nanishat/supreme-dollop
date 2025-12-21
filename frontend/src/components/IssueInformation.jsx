@@ -136,7 +136,7 @@ export default function IssueInformation({
 
           <button
             type="submit"
-            className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+            className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-700"
           >
             Submit Report
           </button>

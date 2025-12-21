@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react';
 export default function ReporterInfo({ formData, errors, onChange }) {
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-[#f71598]">
+      <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
         Reporter & People Information
       </h2>
 
@@ -17,7 +17,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
             name="reporterEmail"
             value={formData.reporterEmail}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.reporterEmail ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder="Enter your email"
@@ -38,7 +38,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
             name="reporterNamePin"
             value={formData.reporterNamePin}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.reporterNamePin ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder="Name + PIN"
@@ -59,7 +59,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
             name="reporterPhone"
             value={formData.reporterPhone}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.reporterPhone ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder="Enter phone number"
@@ -80,7 +80,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
             name="supervisor1NamePin"
             value={formData.supervisor1NamePin}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.supervisor1NamePin ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder="Supervisor 1 Name + PIN"
@@ -101,7 +101,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
             name="supervisor2NamePin"
             value={formData.supervisor2NamePin}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.supervisor2NamePin ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder="Supervisor 2 Name + PIN"
