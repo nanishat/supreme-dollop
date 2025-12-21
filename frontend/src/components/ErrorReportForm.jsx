@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AlertCircle, Upload, X } from 'lucide-react';
 import mockData from '../../../backend/mock-data';
 
@@ -132,10 +132,10 @@ export default function ErrorReportForm() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 text-white shadow-md">
+      <header className="bg-[#f71598] text-white shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-2xl md:text-3xl font-bold">Error Reporting System</h1>
-          <p className="text-blue-100 mt-1 text-sm md:text-base">Submit your error reports and issues</p>
+          <h1 className="text-2xl md:text-3xl font-bold">TaroWorks Troubleshooting</h1>
+          <p className="text-primary-100 mt-1 text-sm md:text-base">Submit your error reports and issues</p>
         </div>
       </header>
 
@@ -151,7 +151,7 @@ export default function ErrorReportForm() {
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Reporter & People Info Section */}
             <section className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-blue-500">
+              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-[#f71598]">
                 Reporter & People Information
               </h2>
               
@@ -165,7 +165,7 @@ export default function ErrorReportForm() {
                     name="reporterEmail"
                     value={formData.reporterEmail}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.reporterEmail ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Enter your email"
@@ -186,7 +186,7 @@ export default function ErrorReportForm() {
                     name="reporterNamePin"
                     value={formData.reporterNamePin}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.reporterNamePin ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Name + PIN"
@@ -207,7 +207,7 @@ export default function ErrorReportForm() {
                     name="reporterPhone"
                     value={formData.reporterPhone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.reporterPhone ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Enter phone number"
@@ -228,7 +228,7 @@ export default function ErrorReportForm() {
                     name="supervisor1NamePin"
                     value={formData.supervisor1NamePin}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.supervisor1NamePin ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Supervisor 1 Name + PIN"
@@ -249,7 +249,7 @@ export default function ErrorReportForm() {
                     name="supervisor2NamePin"
                     value={formData.supervisor2NamePin}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.supervisor2NamePin ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Supervisor 2 Name + PIN"
@@ -265,7 +265,7 @@ export default function ErrorReportForm() {
 
             {/* Location & Project Hierarchy Section */}
             <section className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-blue-500">
+              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-[#f71598]">
                 Location & Project Hierarchy
               </h2>
               
@@ -277,7 +277,7 @@ export default function ErrorReportForm() {
                   <select
                     value={formData.component}
                     onChange={(e) => handleCascadeChange('component', e.target.value)}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#f71598] focus:outline-none ${
                       errors.component ? 'border-red-500' : 'border-gray-300'
                     }`}
                   >
@@ -301,7 +301,7 @@ export default function ErrorReportForm() {
                     value={formData.project}
                     onChange={(e) => handleCascadeChange('project', e.target.value)}
                     disabled={!formData.component}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
                       errors.project ? 'border-red-500' : 'border-gray-300'
                     }`}
                   >
@@ -325,7 +325,7 @@ export default function ErrorReportForm() {
                     value={formData.zonalArea}
                     onChange={(e) => handleCascadeChange('zonalArea', e.target.value)}
                     disabled={!formData.project}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
                       errors.zonalArea ? 'border-red-500' : 'border-gray-300'
                     }`}
                   >
@@ -349,7 +349,7 @@ export default function ErrorReportForm() {
                     value={formData.dmArea}
                     onChange={(e) => handleCascadeChange('dmArea', e.target.value)}
                     disabled={!formData.zonalArea}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
                       errors.dmArea ? 'border-red-500' : 'border-gray-300'
                     }`}
                   >
@@ -373,7 +373,7 @@ export default function ErrorReportForm() {
                     value={formData.branchName}
                     onChange={(e) => handleCascadeChange('branchName', e.target.value)}
                     disabled={!formData.dmArea}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
                       errors.branchName ? 'border-red-500' : 'border-gray-300'
                     }`}
                   >
@@ -397,7 +397,7 @@ export default function ErrorReportForm() {
                     value={formData.districtName}
                     onChange={(e) => handleCascadeChange('districtName', e.target.value)}
                     disabled={!formData.branchName}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select District (Optional)</option>
                     {formData.branchName && mockData.districts[formData.branchName]?.map(district => (
@@ -410,7 +410,7 @@ export default function ErrorReportForm() {
 
             {/* Issue Information Section */}
             <section className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-blue-500">
+              <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
                 Issue Information
               </h2>
               
@@ -424,7 +424,7 @@ export default function ErrorReportForm() {
                       value={formData.phase}
                       onChange={(e) => handleInputChange(e)}
                       name="phase"
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
                         errors.phase ? 'border-red-500' : 'border-gray-300'
                       }`}
                     >
@@ -448,7 +448,7 @@ export default function ErrorReportForm() {
                       value={formData.errorType}
                       onChange={(e) => handleInputChange(e)}
                       name="errorType"
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
                         errors.errorType ? 'border-red-500' : 'border-gray-300'
                       }`}
                     >
@@ -474,7 +474,7 @@ export default function ErrorReportForm() {
                     value={formData.issueDescription}
                     onChange={handleInputChange}
                     rows="5"
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none resize-none ${
                       errors.issueDescription ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Describe the issue in detail..."
@@ -492,9 +492,9 @@ export default function ErrorReportForm() {
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
                     {formData.attachment ? (
-                      <div className="flex items-center justify-between bg-blue-50 p-3 rounded">
+                      <div className="flex items-center justify-between bg-primary-50 p-3 rounded">
                         <div className="flex items-center gap-2">
-                          <Upload size={20} className="text-blue-600" />
+                          <Upload size={20} className="text-primary-600" />
                           <span className="text-sm text-gray-700 truncate max-w-xs">
                             {formData.attachment.name}
                           </span>
@@ -553,7 +553,7 @@ export default function ErrorReportForm() {
 
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                    className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
                   >
                     Submit Report
                   </button>
