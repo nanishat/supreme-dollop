@@ -8,6 +8,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Reporter Email */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Email <span className="text-red-500">*</span>
@@ -29,27 +30,7 @@ export default function ReporterInfo({ formData, errors, onChange }) {
           )}
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Reporter Name & PIN <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="reporterNamePin"
-            value={formData.reporterNamePin}
-            onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
-              errors.reporterNamePin ? 'border-red-500' : 'border-gray-300'
-            }`}
-            placeholder="Name + PIN"
-          />
-          {errors.reporterNamePin && (
-            <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-              <AlertCircle size={12} /> {errors.reporterNamePin}
-            </p>
-          )}
-        </div>
-
+        {/* Phone Number */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Phone Number <span className="text-red-500">*</span>
@@ -71,6 +52,51 @@ export default function ReporterInfo({ formData, errors, onChange }) {
           )}
         </div>
 
+        {/* Reporter Name */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Reporter Name <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            name="reporterName"
+            value={formData.reporterName}
+            onChange={onChange}
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
+              errors.reporterName ? 'border-red-500' : 'border-gray-300'
+            }`}
+            placeholder="Name"
+          />
+          {errors.reporterName && (
+            <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+              <AlertCircle size={12} /> {errors.reporterName}
+            </p>
+          )}
+        </div>
+
+        {/* Reporter PIN */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Reporter PIN <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            name="reporterPin"
+            value={formData.reporterPin}
+            onChange={onChange}
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
+              errors.reporterPin ? 'border-red-500' : 'border-gray-300'
+            }`}
+            placeholder="PIN"
+          />
+          {errors.reporterPin && (
+            <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+              <AlertCircle size={12} /> {errors.reporterPin}
+            </p>
+          )}
+        </div>
+
+        {/* Supervisor 1 Name & PIN */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             1st Supervisor Name & PIN <span className="text-red-500">*</span>
@@ -92,7 +118,8 @@ export default function ReporterInfo({ formData, errors, onChange }) {
           )}
         </div>
 
-        <div className="md:col-span-2">
+        {/* Supervisor 2 Name & PIN */}
+        <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             2nd Supervisor Name & PIN <span className="text-red-500">*</span>
           </label>
