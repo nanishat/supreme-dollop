@@ -1,80 +1,140 @@
-// Mock data structure for cascading dropdowns
-const mockData = {
-  components: ['Component A', 'Component B', 'Component C'],
+// Data structure extracted from SDP Branch-Area Mapping 2025_2026
+const sdpData = {
+  // Top level: Projects (components)
+  components: ['STAR', 'IDP STAR', 'PROSPER', 'STAR PNGO', 'SILATECH', 'STAR UPG'],
+  
+  // Project to Zonal Area mapping
   projects: {
-    'Component A': ['Project A1', 'Project A2', 'Project A3'],
-    'Component B': ['Project B1', 'Project B2'],
-    'Component C': ['Project C1', 'Project C2', 'Project C3']
+    'STAR': ['Noakhali', 'Barisal', 'Rangpur'],
+    'IDP STAR': ['Dinajpur', 'Rajshahi', 'Naogaon', 'Khulna', 'Satkhira'],
+    'PROSPER': ['Cumilla', 'Mymensingh'],
+    'STAR PNGO': ['Rajshahi', 'Sreemangal'],
+    'SILATECH': ['ED', 'PROMISE'],
+    'STAR UPG': ['N/A']
   },
+  
+  // Zonal Area to DM Area mapping
   zonalAreas: {
-    'Project A1': ['Zone A1-1', 'Zone A1-2'],
-    'Project A2': ['Zone A2-1', 'Zone A2-2'],
-    'Project A3': ['Zone A3-1', 'Zone A3-2'],
-    'Project B1': ['Zone B1-1', 'Zone B1-2'],
-    'Project B2': ['Zone B2-1', 'Zone B2-2'],
-    'Project C1': ['Zone C1-1', 'Zone C1-2'],
-    'Project C2': ['Zone C2-1', 'Zone C2-2'],
-    'Project C3': ['Zone C3-1', 'Zone C3-2']
+    // STAR Project
+    'Noakhali': ['Noakhali', 'Khagrachari', 'Jamalpur', 'Moulvibazar'],
+    'Barisal': ['Patuakhali', 'Barisal sadar', 'Bagerhat', 'Jessore'],
+    'Rangpur': ['Ullapara', 'Joypurhat', 'Lalmonirhat', 'Thakurgaon'],
+    
+    // IDP STAR Project
+    'Dinajpur': ['Dinajpur North', 'Dinajpur south'],
+    'Rajshahi': ['Tanore', 'Niamothpur'],
+    'Naogaon': ['Mohadevpur', 'Patnitala'],
+    'Khulna': ['Paikgacha', 'Koyra', 'Dumuria', 'Dakop', 'Rupsha', 'Digholia'],
+    'Satkhira': ['Kolaroa', 'Debhata', 'Shyamnagar', 'Assasuni', 'Tala'],
+    
+    // PROSPER Project
+    'Cumilla': ['Cumilla', 'Chattogram', 'Dhaka'],
+    'Mymensingh': ['Kishoreganj', 'Gaibandha'],
+    
+    // STAR PNGO Project
+    'Rajshahi': ['Barguna', 'Chapainawabganj', 'Polashbari'],
+    'Sreemangal': ['Mymensingh', 'Sherpur', 'Sreemangal', 'Ramgamati'],
+    
+    // SILATECH Project
+    'ED': ['Sylhet', 'Joypurhat'],
+    'PROMISE': ['Barisal', 'Patkelgatha', 'Bagerha', 'Mithapukur', 'Lalpur', 'Joypurhat Sadar'],
+    
+    // STAR UPG Project
+    'N/A': ['Azampur', 'Pallabi', 'Panchlaish', 'Bogura']
   },
+  
+  // DM Area to Branch mapping
   dmAreas: {
-    'Zone A1-1': ['DM A1-1-1', 'DM A1-1-2'],
-    'Zone A1-2': ['DM A1-2-1', 'DM A1-2-2'],
-    'Zone A2-1': ['DM A2-1-1', 'DM A2-1-2'],
-    'Zone A2-2': ['DM A2-2-1', 'DM A2-2-2'],
-    'Zone A3-1': ['DM A3-1-1', 'DM A3-1-2'],
-    'Zone A3-2': ['DM A3-2-1', 'DM A3-2-2'],
-    'Zone B1-1': ['DM B1-1-1', 'DM B1-1-2'],
-    'Zone B1-2': ['DM B1-2-1', 'DM B1-2-2'],
-    'Zone B2-1': ['DM B2-1-1', 'DM B2-1-2'],
-    'Zone B2-2': ['DM B2-2-1', 'DM B2-2-2'],
-    'Zone C1-1': ['DM C1-1-1', 'DM C1-1-2'],
-    'Zone C1-2': ['DM C1-2-1', 'DM C1-2-2'],
-    'Zone C2-1': ['DM C2-1-1', 'DM C2-1-2'],
-    'Zone C2-2': ['DM C2-2-1', 'DM C2-2-2'],
-    'Zone C3-1': ['DM C3-1-1', 'DM C3-1-2'],
-    'Zone C3-2': ['DM C3-2-1', 'DM C3-2-2']
+    // STAR - Noakhali
+    'Noakhali': ['STAR Chandpur Sadar', 'STAR Laxmipur Sadar', 'STAR Begumganj', 'STAR Noakhali sadar', 'STAR Subarnachar', 'STAR Sonaimuri'],
+    'Khagrachari': ['STAR Khagrachari Sadar', 'STAR Manikchari', 'STAR Matiranga', 'STAR Ramgarh', 'STAR Rangamati Sadar', 'STAR Baghaisori', 'STAR Langadu'],
+    'Jamalpur': ['STAR Nalitabari', 'STAR Sherpur Sadar', 'STAR Jamalpur Sadar', 'STAR Muktagacha', 'STAR Netrokona sadar'],
+    'Moulvibazar': ['STAR Moulvibazar', 'STAR Kuluara', 'STAR Chunarughat', 'STAR Bhairab'],
+    
+    // STAR - Barisal
+    'Patuakhali': ['STAR Patuakhali Sadar', 'STAR Bauphal', 'STAR Dumki', 'STAR Bakerganj', 'STAR Mehendiganj'],
+    'Barisal sadar': ['STAR Barishal Sadar', 'STAR Agailjhara', 'STAR Rajapur', 'STAR Jhalokathi', 'STAR Kathalia'],
+    'Bagerhat': ['STAR Bagerhat Sadar', 'STAR Fakirhat', 'STAR Pirojpur Sadar', 'STAR Mathbaria'],
+    'Jessore': ['STAR Jessore sadar', 'STAR Chougachha', 'STAR Phultala', 'STAR Satkhira Sadar'],
+    
+    // STAR - Rangpur
+    'Ullapara': ['STAR Ullapara', 'STAR Pabna Sadar', 'STAR Sirajganj Sadar', 'STAR Gaibandha Sadar', 'STAR Pirganj'],
+    'Joypurhat': ['STAR Joypurhat sadar', 'STAR Naogaon Sadar', 'STAR Panchbibi', 'STAR Gomostapur', 'STAR Shibganj'],
+    'Lalmonirhat': ['STAR kaliganj', 'STAR Patgram', 'STAR Lalmonirhat Sadar', 'STAR Kurigram Sadar', 'STAR Mithapukur'],
+    'Thakurgaon': ['STAR Thakurgaon Sadar', 'STAR Panchagarh Sadar', 'STAR Boda', 'STAR Domar', 'STAR Saidpur'],
+    
+    // IDP STAR - Dinajpur
+    'Dinajpur North': ['B2B Godagari', 'B2B Komolpur', 'B2B Birol 1', 'B2B Birol 2', 'B2B Bochaganj', 'B2B Bokultola', 'B2B Kaharol', 'B2B Kantanagar', 'B2B Birganj 1', 'B2B Birganj 2', 'B2B Jharbari', 'B2B Pakerhat', 'B2B Khansama'],
+    'Dinajpur south': ['B2B Cirirbandar', 'B2B Ranirbandar', 'B2B Fulbari 1', 'B2B Fulbari 2', 'B2B Baraihat', 'B2B Katla 1', 'B2B Katla 2', 'B2B Birampur', 'B2B Bhaduria', 'B2B Nawabganj', 'B2B Ghoraghat', 'B2B Osmanpur', 'B2B Hakimpur 1', 'B2B Hakimpur 2'],
+    
+    // IDP STAR - Rajshahi
+    'Tanore': ['B2B Tanore', 'B2B Mundumala'],
+    'Niamothpur': ['B2B Niamatpur', 'B2B TLB'],
+    
+    // IDP STAR - Naogaon
+    'Mohadevpur': ['B2B Mohadevpur 1', 'B2B Mohadevpur 2', 'B2B Badalgachhi 1', 'B2B Badalgachhi 2'],
+    'Patnitala': ['B2B Patnitala', 'B2B Sapahar', 'B2B Dighirhat'],
+    
+    // IDP STAR - Khulna
+    'Paikgacha': ['B2B Paikgachha', 'B2B Baka Bazar'],
+    'Koyra': ['B2B Koyra Sadar 1', 'B2B Koyra Sadar 2', 'B2B Koyra Sadar 3'],
+    'Dumuria': ['B2B Shahpur', 'B2B Dumuria'],
+    'Dakop': ['B2B Dakop'],
+    'Rupsha': ['B2B Jabusha'],
+    'Digholia': ['B2B Digholia'],
+    
+    // IDP STAR - Satkhira
+    'Kolaroa': ['B2B Sonabaria 1', 'B2B Sonabaria 2', 'B2B Kalaroa 1', 'B2B Kalaroa 2'],
+    'Debhata': ['B2B Putimari', 'B2B Debhata 1', 'B2B Debhata 2', 'B2B Kaliganj 1', 'B2B Kaliganj 2'],
+    'Shyamnagar': ['B2B Munshiganj', 'B2B Shyamnagar Sadar 1', 'B2B Shyamnagar Sadar 2', 'B2B Vatkhali'],
+    'Assasuni': ['B2B Towerdanga', 'B2B Assasuni 1', 'B2B Assasuni 2'],
+    'Tala': ['B2B Tala 1', 'B2B Tala 2'],
+    
+    // PROSPER - Cumilla
+    'Cumilla': ['PROSPER Comilla Sadar', 'PROSPER Laksham', 'PROSPER Noakhali Sadar', 'PROSPER Companyganj', 'PROSPER Brahmanbaria Sadar', 'PROSPER Chandpur Sadar', 'PROSPER Lakshmipur Sadar', 'PROSPER Muradnagar'],
+    'Chattogram': ['PROSPER Feni Sadar', 'PROSPER Pashlish', 'PROSPER Kornelhat', 'PROSPER Hat hazari', 'PROSPER Patiya', 'PROSPER Keranirhat', 'PROSPER Fatikchhari', 'PROSPER Mirsharai'],
+    'Dhaka': ['PROSPER Banosree', 'PROSPER Jatrabari', 'PROSPER Badda', 'PROSPER Monohardi', 'PROSPER Mirpur', 'PROSPER Madhabdi', 'PROSPER Shibpur', 'PROSPER Madhupur'],
+    
+    // PROSPER - Mymensingh
+    'Kishoreganj': ['PROSPER Mymensingh Sadar', 'PROSPER Islampur', 'PROSPER Jamalpur Sadar', 'PROSPER Kishoregonj Sadar', 'PROSPER Dakshin Surma', 'PROSPER Fenchuganj', 'PROSPER Sreemangal', 'PROSPER Habiganj Sadar'],
+    'Gaibandha': ['PROSPER Gaibandha Sadar', 'PROSPER Gobindaganj', 'PROSPER Saidpur', 'PROSPER Dinajpur Sadar', 'PROSPER Fulbari', 'PROSPER Bogra Sadar', 'PROSPER Sherpur', 'PROSPER Naogaon Sadar'],
+    
+    // STAR PNGO - Rajshahi
+    'Barguna': ['STAR PNGO Barguna Sadar 1', 'STAR PNGO Bamna', 'STAR PNGO Amtali', 'STAR PNGO Kalapara', 'STAR PNGO Mirzaganj', 'STAR PNGO Betagi', 'STAR PNGO Patharghata 1', 'STAR PNGO Taltali', 'STAR PNGO Barguna Sadar 2', 'STAR PNGO Patharghata 2'],
+    'Chapainawabganj': ['STAR PNGO Mohadevpur', 'STAR PNGO Manda', 'STAR PNGO Nawabganj Sadar', 'STAR PNGO Patnitala', 'STAR PNGO Dhamurhat', 'STAR PNGO Mohanpur', 'STAR PNGO Puthia', 'STAR PNGO Godagari', 'STAR PNGO Bagha', 'STAR PNGO Charghat'],
+    'Polashbari': ['STAR PNGO Palashbari', 'STAR PNGO Sadullapur', 'STAR PNGO Gobindaganj', 'STAR PNGO Saghata', 'STAR PNGO Fulchuri', 'STAR PNGO Sundarganj', 'STAR PNGO Rowmari', 'STAR PNGO Rajibpur', 'STAR PNGO Gangachara', 'STAR PNGO Aditmari'],
+    
+    // STAR PNGO - Sreemangal
+    'Mymensingh': ['STAR PNGO Gofargaon', 'STAR PNGO Trishal', 'STAR PNGO Bhaluka', 'STAR PNGO Gouripur', 'STAR PNGO Fulbaria', 'STAR PNGO Shambhuganj', 'STAR PNGO Dhara Bazar', 'STAR PNGO Phulpur', 'STAR PNGO Tarakanda', 'STAR PNGO Police Line'],
+    'Sherpur': ['STAR PNGO Mohongonj', 'STAR PNGO Purbodhola', 'STAR PNGO Kalmakanda', 'STAR PNGO Barhattra', 'STAR PNGO Dewanganj', 'STAR PNGO Islampur', 'STAR PNGO Bakshiganj', 'STAR PNGO Jhenigati', 'STAR PNGO Nakla', 'STAR PNGO Sreebardi'],
+    'Sreemangal': ['STAR PNGO Chhatak', 'STAR PNGO Gobindaganj Chatak', 'STAR PNGO Shantiganj', 'STAR PNGO Jagannathpur', 'STAR PNGO Derai', 'STAR PNGO Kamalganj', 'STAR PNGO Rajnagar', 'STAR PNGO Sreemangal', 'STAR PNGO Bahubal', 'STAR PNGO Nobiganj'],
+    'Ramgamati': ['STAR PNGO Khagrachhari Sadar', 'STAR PNGO Dighinala', 'STAR PNGO Panchhari', 'STAR PNGO Mahalchari', 'STAR PNGO Naniarchar', 'STAR PNGO Rangamati Sadar', 'STAR PNGO Kawkhali', 'STAR PNGO Rajasthali', 'STAR PNGO Juraichhari', 'STAR PNGO Kaptai'],
+    
+    // SILATECH - ED
+    'Sylhet': ['ED/Sylhet Sadar', 'ED/Golapgonj', 'ED/Sunamgonj Sadar', 'ED/Hobigonj Sadar', 'ED/Moulovibazar Sadar', 'ED/Sreemongal'],
+    'Joypurhat': ['ED/Lalmonirhat Sadar', 'ED/Mithapukur', 'ED/Palashbari', 'ED/Ishwardi', 'ED/Chatmohor', 'ED/Panchbibi', 'ED/Joypurhat Sadar', 'ED/Natore Sadar', 'ED/Naogaon Sadar'],
+    
+    // SILATECH - PROMISE
+    'Barisal': ['Silatech-PROMISE Borisal Sadar', 'Silatech-PROMISE Gournodi', 'Silatech-PROMISE Jalokathi Sadar'],
+    'Patkelgatha': ['Silatech-PROMISE Dumuria', 'Silatech-PROMISE Kaligonj', 'Silatech-PROMISE PatkelGhata'],
+    'Bagerha': ['Silatech-PROMISE Bagerhat Sadar', 'Silatech-PROMISE Botiagatha', 'Silatech-PROMISE Fokirhat'],
+    'Mithapukur': ['Silatech-PROMISE Mithapukur', 'Silatech-PROMISE Palashbari', 'Silatech-PROMISE Lalmonirhat Sadar'],
+    'Lalpur': ['Silatech-PROMISE Natore sadar', 'Silatech-PROMISE Lalpur', 'Silatech-PROMISE Ishwardi'],
+    'Joypurhat Sadar': ['Silatech-PROMISE Joypurhat Sadar', 'Silatech-PROMISE Patnitola', 'Silatech-PROMISE Panchbibi'],
+    
+    // STAR UPG
+    'Azampur': ['STAR UPG Notun Bazar', 'STAR UPG Azampur', 'STAR UPG Gazipur Sadar 1', 'STAR UPG Gazipur Sadar 2', 'STAR UPG Tongi East', 'STAR UPG Mymensingh Sadar'],
+    'Pallabi': ['STAR UPG Easternhousing', 'STAR UPG Bhashantek', 'STAR UPG Pallabi', 'STAR UPG Shitalakkha', 'STAR UPG Adamji', 'STAR UPG Bandar'],
+    'Panchlaish': ['STAR UPG Sugandha', 'STAR UPG Bakalia', 'STAR UPG Pahartali', 'STAR UPG Firingi Bazar', 'STAR UPG Lalkhan', 'STAR UPG Cornelhat'],
+    'Bogura': ['STAR UPG Paba', 'STAR UPG Motihar', 'STAR UPG Mollapara', 'STAR UPG Bogra Urban', 'STAR UPG Bogra Sadar', 'STAR UPG Kamal Kachna', 'STAR UPG Satgara']
   },
-  branches: {
-    'DM A1-1-1': ['Branch 1', 'Branch 2'],
-    'DM A1-1-2': ['Branch 3', 'Branch 4'],
-    'DM A1-2-1': ['Branch 5', 'Branch 6'],
-    'DM A1-2-2': ['Branch 7', 'Branch 8'],
-    'DM A2-1-1': ['Branch 9', 'Branch 10'],
-    'DM A2-1-2': ['Branch 11', 'Branch 12'],
-    'DM A2-2-1': ['Branch 13', 'Branch 14'],
-    'DM A2-2-2': ['Branch 15', 'Branch 16'],
-    'DM A3-1-1': ['Branch 17', 'Branch 18'],
-    'DM A3-1-2': ['Branch 19', 'Branch 20'],
-    'DM A3-2-1': ['Branch 21', 'Branch 22'],
-    'DM A3-2-2': ['Branch 23', 'Branch 24'],
-    'DM B1-1-1': ['Branch 25', 'Branch 26'],
-    'DM B1-1-2': ['Branch 27', 'Branch 28'],
-    'DM B1-2-1': ['Branch 29', 'Branch 30'],
-    'DM B1-2-2': ['Branch 31', 'Branch 32'],
-    'DM B2-1-1': ['Branch 33', 'Branch 34'],
-    'DM B2-1-2': ['Branch 35', 'Branch 36'],
-    'DM B2-2-1': ['Branch 37', 'Branch 38'],
-    'DM B2-2-2': ['Branch 39', 'Branch 40'],
-    'DM C1-1-1': ['Branch 41', 'Branch 42'],
-    'DM C1-1-2': ['Branch 43', 'Branch 44'],
-    'DM C1-2-1': ['Branch 45', 'Branch 46'],
-    'DM C1-2-2': ['Branch 47', 'Branch 48'],
-    'DM C2-1-1': ['Branch 49', 'Branch 50'],
-    'DM C2-1-2': ['Branch 51', 'Branch 52'],
-    'DM C2-2-1': ['Branch 53', 'Branch 54'],
-    'DM C2-2-2': ['Branch 55', 'Branch 56'],
-    'DM C3-1-1': ['Branch 57', 'Branch 58'],
-    'DM C3-1-2': ['Branch 59', 'Branch 60'],
-    'DM C3-2-1': ['Branch 61', 'Branch 62'],
-    'DM C3-2-2': ['Branch 63', 'Branch 64']
-  },
-  districts: {
-    'Branch 1': ['District 1', 'District 2'],
-    'Branch 2': ['District 3', 'District 4']
-    // Add more as needed - simplified for demo
-  },
+  
+  // Branches don't have sub-districts in this data, so this would be empty or can be omitted
+  branches: {},
+  
+  // You can add these if needed for your form
   phases: ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4'],
   errorTypes: ['Data Entry Error', 'System Error', 'Network Error', 'Configuration Error', 'Other']
 };
 
-export default mockData;
+export default sdpData;
