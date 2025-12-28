@@ -8,7 +8,8 @@ import SuccessMessage from './SuccessMessage';
 export default function ErrorReportForm() {
   const [formData, setFormData] = useState({
     reporterEmail: '',
-    reporterNamePin: '',
+    reporterName: '',
+    reporterPin: '',
     reporterPhone: '',
     supervisor1NamePin: '',
     supervisor2NamePin: '',
@@ -84,7 +85,8 @@ export default function ErrorReportForm() {
     if (!formData.reporterEmail) newErrors.reporterEmail = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.reporterEmail)) newErrors.reporterEmail = 'Invalid email format';
     
-    if (!formData.reporterNamePin) newErrors.reporterNamePin = 'Reporter name & PIN is required';
+    if (!formData.reporterName) newErrors.reporterName = 'Reporter name is required';
+    if (!formData.reporterPin) newErrors.reporterPin = 'Reporter PIN is required';
     if (!formData.reporterPhone) newErrors.reporterPhone = 'Phone number is required';
     if (!formData.supervisor1NamePin) newErrors.supervisor1NamePin = '1st supervisor is required';
     if (!formData.supervisor2NamePin) newErrors.supervisor2NamePin = '2nd supervisor is required';
@@ -112,7 +114,8 @@ export default function ErrorReportForm() {
       setTimeout(() => {
         setFormData({
           reporterEmail: '',
-          reporterNamePin: '',
+          reporterName: '',
+          reporterPin: '',
           reporterPhone: '',
           supervisor1NamePin: '',
           supervisor2NamePin: '',
@@ -154,7 +157,8 @@ export default function ErrorReportForm() {
               onReset={() => {
                 setFormData({
                   reporterEmail: '',
-                  reporterNamePin: '',
+                  reporterName: '',
+                  reporterPin: '',
                   reporterPhone: '',
                   supervisor1NamePin: '',
                   supervisor2NamePin: '',
