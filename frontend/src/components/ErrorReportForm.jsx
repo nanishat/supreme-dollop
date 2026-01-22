@@ -94,7 +94,7 @@ export default function ErrorReportForm() {
     if (!formData.project) newErrors.project = 'Project is required';
     if (!formData.zonalArea) newErrors.zonalArea = 'Zonal Area is required';
     if (!formData.dmArea) newErrors.dmArea = 'DM Area is required';
-    if (!formData.branchName) newErrors.branchName = 'Branch Name is required';
+    // Branch Name is optional for now
     if (!formData.phase) newErrors.phase = 'Phase is required';
     if (!formData.errorType) newErrors.errorType = 'Error Type is required';
     if (!formData.issueDescription) newErrors.issueDescription = 'Issue description is required';
@@ -103,13 +103,28 @@ export default function ErrorReportForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
+    if (!validateForm()) return;
+
+    try {
+      const resp = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!resp.ok) {
+        const payload = await resp.json().catch(() => ({}));
+        setErrors(prev => ({ ...prev, submit: payload.message || 'Submission failed' }));
+        return;
+      }
+
+      // success
+      setErrors({});
       setSubmitted(true);
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({
@@ -132,6 +147,9 @@ export default function ErrorReportForm() {
         });
         setSubmitted(false);
       }, 3000);
+    } catch (err) {
+      console.error('Submission error', err);
+      setErrors(prev => ({ ...prev, submit: err.message || 'Network error' }));
     }
   };
 
@@ -144,6 +162,11 @@ export default function ErrorReportForm() {
           <SuccessMessage />
         ) : (
           <form onSubmit={handleSubmit} className="space-y-8">
+            {errors.submit && (
+              <div className="bg-red-50 border border-red-200 rounded-md p-3 text-sm text-red-700">
+                {errors.submit}
+              </div>
+            )}
             <ReporterInfo formData={formData} errors={errors} onChange={handleInputChange} />
 
             <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascadeChange} />

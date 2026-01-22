@@ -1,5 +1,5 @@
 import { AlertCircle, Upload, X } from 'lucide-react';
-import mockData from '../../../backend/mock-data';
+import mockData from '../../../backend/data';
 
 export default function IssueInformation({
   formData,

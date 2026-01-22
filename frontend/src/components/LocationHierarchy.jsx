@@ -1,7 +1,32 @@
 import { AlertCircle } from 'lucide-react';
-import mockData from '../../../backend/mock-data';
+import mockData from '../../../backend/data';
 
 export default function LocationHierarchy({ formData, errors, onCascadeChange }) {
+  // Helper function to get projects for selected component
+  const getProjectsForComponent = () => {
+    return formData.component ? (mockData.projects[formData.component] || []) : [];
+  };
+
+  // Helper function to get zonal areas for selected project
+  const getZonalAreasForProject = () => {
+    return formData.project ? (mockData.zonalAreasByProject[formData.project] || []) : [];
+  };
+
+  // Helper function to get DM areas for selected zonal area
+  const getDMAreasForZonalArea = () => {
+    return formData.zonalArea ? (mockData.zonalAreas[formData.zonalArea] || []) : [];
+  };
+
+  // Helper function to get branches for selected DM area
+  const getBranchesForDMArea = () => {
+    return formData.dmArea ? (mockData.dmAreas[formData.dmArea] || []) : [];
+  };
+
+  // Helper function to get districts for selected branch
+  const getDistrictsForBranch = () => {
+    return formData.branchName ? (mockData.branches[formData.branchName] || []) : [];
+  };
+
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
@@ -45,7 +70,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             <option value="">Select Project</option>
-            {formData.component && mockData.projects[formData.component]?.map(proj => (
+            {getProjectsForComponent().map(proj => (
               <option key={proj} value={proj}>{proj}</option>
             ))}
           </select>
@@ -69,7 +94,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             <option value="">Select Zonal Area</option>
-            {formData.project && mockData.zonalAreas[formData.project]?.map(zone => (
+            {getZonalAreasForProject().map(zone => (
               <option key={zone} value={zone}>{zone}</option>
             ))}
           </select>
@@ -93,7 +118,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             <option value="">Select DM Area</option>
-            {formData.zonalArea && mockData.dmAreas[formData.zonalArea]?.map(dm => (
+            {getDMAreasForZonalArea().map(dm => (
               <option key={dm} value={dm}>{dm}</option>
             ))}
           </select>
@@ -106,26 +131,19 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Branch Name <span className="text-red-500">*</span>
+            Branch Name
           </label>
           <select
             value={formData.branchName}
             onChange={(e) => onCascadeChange('branchName', e.target.value)}
             disabled={!formData.dmArea}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
-              errors.branchName ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
           >
-            <option value="">Select Branch</option>
-            {formData.dmArea && mockData.branches[formData.dmArea]?.map(branch => (
+            <option value="">Select Branch (Optional)</option>
+            {getBranchesForDMArea().map(branch => (
               <option key={branch} value={branch}>{branch}</option>
             ))}
           </select>
-          {errors.branchName && (
-            <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-              <AlertCircle size={12} /> {errors.branchName}
-            </p>
-          )}
         </div>
 
         <div>
@@ -139,7 +157,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
           >
             <option value="">Select District (Optional)</option>
-            {formData.branchName && mockData.districts[formData.branchName]?.map(district => (
+            {getDistrictsForBranch().map(district => (
               <option key={district} value={district}>{district}</option>
             ))}
           </select>
