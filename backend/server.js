@@ -71,11 +71,30 @@ app.post("/api/submit", async (req, res) => {
 
     const columns = (
       process.env.GOOGLE_SHEET_COLUMNS ||
-      "timestamp,reporterEmail,reporterName,reporterPin,reporterPhone,supervisor1NamePin,supervisor2NamePin,component,project,zonalArea,dmArea,branchName,districtName,phase,errorType,issueDescription"
-    ).split(",");
+      "timestamp,reporterEmail,reporterName,reporterPin,reporterPhone,supervisor1NamePin,supervisor2NamePin,component,project,zonalArea,dmArea,branchName,districtName,phase,errorType,issueDescription,attachment"
+    ).split(",").map(c => c.trim());
 
     const row = columns.map((c) => {
-      if (c === "timestamp") return new Date().toISOString();
+      if (c === "timestamp") {
+        // Convert UTC to Bangladesh timezone (UTC+6) and format as M/D/YYYY HH:mm:ss
+        const now = new Date();
+        const bangladeshTime = new Date(now.getTime() + (6 * 60 * 60 * 1000));
+        const month = bangladeshTime.getUTCMonth() + 1;
+        const day = bangladeshTime.getUTCDate();
+        const year = bangladeshTime.getUTCFullYear();
+        const hours = String(bangladeshTime.getUTCHours()).padStart(2, '0');
+        const minutes = String(bangladeshTime.getUTCMinutes()).padStart(2, '0');
+        const seconds = String(bangladeshTime.getUTCSeconds()).padStart(2, '0');
+        return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+      }
+      if (c === "attachment") {
+        // Extract filename from attachment (File object comes with 'name' property)
+        const attachment = formData[c];
+        if (attachment && typeof attachment === 'object' && attachment.name) {
+          return attachment.name;
+        }
+        return "";
+      }
       return (formData[c] ?? "").toString();
     });
 
