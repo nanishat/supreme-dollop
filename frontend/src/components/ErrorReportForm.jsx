@@ -4,6 +4,7 @@ import ReporterInfo from './ReporterInfo';
 import LocationHierarchy from './LocationHierarchy';
 import IssueInformation from './IssueInformation';
 import SuccessMessage from './SuccessMessage';
+import Footer from './Footer';
 
 export default function ErrorReportForm() {
   const [formData, setFormData] = useState({
@@ -203,6 +204,8 @@ export default function ErrorReportForm() {
           </form>
         )}
       </main>
+
+      <Footer />
     </div>
   );
 }
