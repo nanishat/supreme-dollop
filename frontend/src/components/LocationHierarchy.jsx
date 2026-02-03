@@ -1,30 +1,25 @@
 import { AlertCircle } from 'lucide-react';
-import mockData from '../../../backend/data';
+import sdpData from '../../../backend/data';
 
 export default function LocationHierarchy({ formData, errors, onCascadeChange }) {
   // Helper function to get projects for selected component
   const getProjectsForComponent = () => {
-    return formData.component ? (mockData.projects[formData.component] || []) : [];
+    return formData.component ? (sdpData.projects[formData.component] || []) : [];
   };
 
   // Helper function to get zonal areas for selected project
   const getZonalAreasForProject = () => {
-    return formData.project ? (mockData.zonalAreasByProject[formData.project] || []) : [];
+    return formData.project ? (sdpData.zonalAreasByProject[formData.project] || []) : [];
   };
 
   // Helper function to get DM areas for selected zonal area
   const getDMAreasForZonalArea = () => {
-    return formData.zonalArea ? (mockData.zonalAreas[formData.zonalArea] || []) : [];
+    return formData.zonalArea ? (sdpData.zonalAreas[formData.zonalArea] || []) : [];
   };
 
   // Helper function to get branches for selected DM area
   const getBranchesForDMArea = () => {
-    return formData.dmArea ? (mockData.dmAreas[formData.dmArea] || []) : [];
-  };
-
-  // Helper function to get districts for selected branch
-  const getDistrictsForBranch = () => {
-    return formData.branchName ? (mockData.branches[formData.branchName] || []) : [];
+    return formData.dmArea ? (sdpData.dmAreas[formData.dmArea] || []) : [];
   };
 
   return (
@@ -46,7 +41,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             <option value="">Select Component</option>
-            {mockData.components.map(comp => (
+            {sdpData.components.map(comp => (
               <option key={comp} value={comp}>{comp}</option>
             ))}
           </select>
@@ -150,17 +145,13 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
           <label className="block text-sm font-medium text-gray-700 mb-2">
             District Name
           </label>
-          <select
+          <input
+            type="text"
             value={formData.districtName}
             onChange={(e) => onCascadeChange('districtName', e.target.value)}
-            disabled={!formData.branchName}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-          >
-            <option value="">Select District (Optional)</option>
-            {getDistrictsForBranch().map(district => (
-              <option key={district} value={district}>{district}</option>
-            ))}
-          </select>
+            placeholder="Enter District Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none"
+          />
         </div>
       </div>
     </section>

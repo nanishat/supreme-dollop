@@ -4,12 +4,14 @@
  */
 
 const zonalAreasByProject = {
-  STAR: ["Noakhali", "Barisal", "Rangpur"],
-  "IDP STAR": ["Dinajpur", "Rajshahi", "Naogaon", "Khulna", "Satkhira"],
-  PROSPER: ["Cumilla", "Mymensingh"],
-  "STAR PNGO": ["Barguna", "Chapainawabganj", "Polashbari", "Mymensingh", "Sherpur", "Sreemangal", "Ramgamati"],
-  SILATECH: ["Sylhet", "Joypurhat", "Barisal", "Patkelgatha", "Bagerha", "Mithapukur", "Lalpur", "Joypurhat Sadar"],
+  "STAR": ["Noakhali", "Barisal", "Rangpur"],
   "STAR UPG": ["Azampur", "Pallabi", "Panchlaish", "Bogura"],
+  "IDP STAR": ["Dinajpur", "Rajshahi", "Naogaon", "Khulna", "Satkhira"],
+  "STAR PNGO": ["Barguna", "Chapainawabganj", "Polashbari", "Mymensingh", "Sherpur", "Sreemangal", "Ramgamati"],
+
+  "PROSPER": ["Cumilla", "Mymensingh"],
+  "SILATECH": ["Sylhet", "Joypurhat", "Barisal", "Patkelgatha", "Bagerha", "Mithapukur", "Lalpur", "Joypurhat Sadar"],
+  
 };
 
 /**

@@ -5,10 +5,10 @@
 
 const projects = {
   "ED": ["SILATECH"],
-  "ISD": ["IDP STAR"],
+  "ISD": ["BISD IT", "BISD TVET", "BISD Joldhaka", "Care Giver for Japan", "Empower ALP", "Govt"],
   "PROMISE": ["SILATECH", "PROMISE"],
   "PROSPER": ["PROSPER"],
-  "STAR": ["STAR", "STAR PNGO", "STAR UPG"],
+  "STAR": ["STAR", "STAR PNGO", "STAR UPG", "IDP STAR"],
   "PRISE": [],
   "RETAIL SALES": []
 };
