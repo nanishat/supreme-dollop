@@ -51,7 +51,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
               errors.component ? 'border-red-500' : 'border-gray-300'
             }`}
           >
-            <option value="">Select Component</option>
+            {formData.component === '' && <option value="">Select Component</option>}
             {sdpData.components.map(comp => (
               <option key={comp} value={comp}>{comp}</option>
             ))}
@@ -75,7 +75,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
               errors.project ? 'border-red-500' : 'border-gray-300'
             }`}
           >
-            <option value="">Select Project</option>
+            {formData.project === '' && <option value="">Select Project</option>}
             {getProjectsForComponent().map(proj => (
               <option key={proj} value={proj}>{proj}</option>
             ))}
@@ -99,7 +99,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
               errors.zonalArea ? 'border-red-500' : 'border-gray-300'
             }`}
           >
-            <option value="">Select Zonal Area</option>
+            {formData.zonalArea === '' && <option value="">Select Zonal Area</option>}
             {getZonalAreasForProject().map(zone => (
               <option key={zone} value={zone}>{zone}</option>
             ))}
@@ -123,7 +123,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
               errors.dmArea ? 'border-red-500' : 'border-gray-300'
             }`}
           >
-            <option value="">Select DM Area</option>
+            {formData.dmArea === '' && <option value="">Select DM Area</option>}
             {getDMAreasForZonalArea().map(dm => (
               <option key={dm} value={dm}>{dm}</option>
             ))}
@@ -145,7 +145,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             disabled={!formData.dmArea}
             className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
           >
-            <option value="">Select Branch (Optional)</option>
+            {formData.branchName === '' && <option value="">Select Branch (Optional)</option>}
             {getBranchesForDMArea().map(branch => (
               <option key={branch} value={branch}>{branch}</option>
             ))}

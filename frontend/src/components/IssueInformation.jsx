@@ -30,7 +30,7 @@ export default function IssueInformation({
                 errors.phase ? 'border-red-500' : 'border-gray-300'
               }`}
             >
-              <option value="">Select Phase</option>
+              {formData.phase === '' && <option value="">Select Phase</option>}
               {mockData.phases.map(phase => (
                 <option key={phase} value={phase}>{phase}</option>
               ))}
@@ -54,7 +54,7 @@ export default function IssueInformation({
                 errors.errorType ? 'border-red-500' : 'border-gray-300'
               }`}
             >
-              <option value="">Select Error Type</option>
+              {formData.errorType === '' && <option value="">Select Error Type</option>}
               {mockData.errorTypes.map(type => (
                 <option key={type} value={type}>{type}</option>
               ))}
