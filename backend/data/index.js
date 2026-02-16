@@ -8,8 +8,9 @@
  * Structure:
  * - components: Array of top-level organizational units
  * - projects: Mapping of components to projects
- * - zonalAreasByProject: Mapping of projects to zonal areas
- * - zonalAreas: Mapping of zonal areas to DM areas
+ * - zonalArea: Mapping of projects to zonal areas
+ * - projectDmAreaMapping: Mapping of projects to DM areas (for N/A zonal area cases)
+ * - zonalAreaDmAreas: Mapping of zonal areas to DM areas
  * - dmAreas: Mapping of DM areas to branches
  * - branches: Mapping of branches to districts
  * - phases: Form phase options
@@ -18,7 +19,8 @@
 
 import components from './components.js';
 import projects from './projects.js';
-import { zonalAreasByProject, zonalAreas } from './zonalAreas.js';
+import { zonalArea, projectDmAreaMapping } from './zonalAreas.js';
+import { zonalAreaDmAreas } from './zonalAreaDmAreas.js';
 import dmAreas from './dmAreas.js';
 import branches from './branches.js';
 import { phases, errorTypes } from './formConfig.js';
@@ -26,8 +28,9 @@ import { phases, errorTypes } from './formConfig.js';
 const sdpData = {
   components,
   projects,
-  zonalAreasByProject,
-  zonalAreas,
+  zonalArea,
+  projectDmAreaMapping,
+  zonalAreaDmAreas,
   dmAreas,
   branches,
   phases,
@@ -40,8 +43,9 @@ export default sdpData;
 export {
   components,
   projects,
-  zonalAreasByProject,
-  zonalAreas,
+  zonalArea,
+  projectDmAreaMapping,
+  zonalAreaDmAreas,
   dmAreas,
   branches,
   phases,

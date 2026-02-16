@@ -26,7 +26,7 @@ export default function IssueInformation({
               value={formData.phase}
               onChange={onChange}
               name="phase"
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 ${
                 errors.phase ? 'border-red-500' : 'border-gray-300'
               }`}
             >
@@ -50,7 +50,7 @@ export default function IssueInformation({
               value={formData.errorType}
               onChange={onChange}
               name="errorType"
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 ${
                 errors.errorType ? 'border-red-500' : 'border-gray-300'
               }`}
             >
@@ -95,9 +95,9 @@ export default function IssueInformation({
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
             {formData.attachment ? (
               <div className="flex items-center justify-between bg-primary-50 p-3 rounded">
-                <div className="flex items-center gap-2">
-                  <Upload size={20} className="text-primary-600" />
-                  <span className="text-sm text-gray-700 truncate max-w-xs">
+                <div className="flex items-center gap-2 min-w-0 flex-1">
+                  <Upload size={20} className="text-primary-600 shrink-0" />
+                  <span className="text-sm text-gray-700 wrap-break-word">
                     {formData.attachment.name}
                   </span>
                 </div>

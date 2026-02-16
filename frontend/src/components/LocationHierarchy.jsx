@@ -9,13 +9,24 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
 
   // Helper function to get zonal areas for selected project
   const getZonalAreasForProject = () => {
-    return formData.project ? (sdpData.zonalAreasByProject[formData.project] || []) : [];
+    return formData.project ? (sdpData.zonalArea[formData.project] || []) : [];
   };
 
-  // Helper function to get DM areas for selected zonal area
+  // Helper function to get DM areas for selected zonal area or project (when N/A)
   const getDMAreasForZonalArea = () => {
-    return formData.zonalArea ? (sdpData.zonalAreas[formData.zonalArea] || []) : [];
+    if (!formData.zonalArea) return [];
+    
+    // If zonal area is N/A, get DM areas from project mapping
+    if (formData.zonalArea === 'N/A') {
+      return formData.project ? (sdpData.projectDmAreaMapping[formData.project] || []) : [];
+    }
+    
+    // Otherwise, get DM areas from zonal area mapping
+    return sdpData.zonalAreaDmAreas[formData.zonalArea] || [];
   };
+
+  // Check if zonal area is N/A
+  const isZonalAreaNA = formData.zonalArea === 'N/A';
 
   // Helper function to get branches for selected DM area
   const getBranchesForDMArea = () => {
@@ -36,7 +47,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
           <select
             value={formData.component}
             onChange={(e) => onCascadeChange('component', e.target.value)}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 ${
               errors.component ? 'border-red-500' : 'border-gray-300'
             }`}
           >
@@ -60,7 +71,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             value={formData.project}
             onChange={(e) => onCascadeChange('project', e.target.value)}
             disabled={!formData.component}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.project ? 'border-red-500' : 'border-gray-300'
             }`}
           >
@@ -84,7 +95,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             value={formData.zonalArea}
             onChange={(e) => onCascadeChange('zonalArea', e.target.value)}
             disabled={!formData.project}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.zonalArea ? 'border-red-500' : 'border-gray-300'
             }`}
           >
@@ -108,7 +119,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             value={formData.dmArea}
             onChange={(e) => onCascadeChange('dmArea', e.target.value)}
             disabled={!formData.zonalArea}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed ${
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.dmArea ? 'border-red-500' : 'border-gray-300'
             }`}
           >
@@ -132,7 +143,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             value={formData.branchName}
             onChange={(e) => onCascadeChange('branchName', e.target.value)}
             disabled={!formData.dmArea}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
           >
             <option value="">Select Branch (Optional)</option>
             {getBranchesForDMArea().map(branch => (
@@ -141,7 +152,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
           </select>
         </div>
 
-        <div>
+        <div className={!isZonalAreaNA ? 'hidden' : ''}>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             District Name
           </label>

@@ -9,7 +9,6 @@ const components = [
   "PROMISE",
   "PROSPER",
   "STAR",
-  "PRISE",
   "RETAIL SALES"
 ];
 
