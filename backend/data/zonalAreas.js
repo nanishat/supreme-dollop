@@ -8,31 +8,31 @@
  */
 
 const zonalArea = {
-  // ISD projects
+  /* ISD projects
   "BISD IT": ["N/A", "Dhaka", "Chattogram", "Sylhet"],
   "BISD TVET": ["N/A", "Dhaka", "Chattogram", "Sylhet"],
   "BISD Joldhaka": ["N/A", "Joldhaka"],
   "Care Giver for Japan": ["N/A", "Dhaka"],
   "PISD": ["N/A", "Dhaka"],
   "Govt": ["N/A", "Dhaka"],
-  
+  */
+ 
   // STAR projects
-  "STAR BRAC": ["N/A", "Barishal", "Noakhali", "Rangpur"],
-  "STAR SPA": ["N/A"],
-  "STAR RELI": ["N/A"],
+  "STAR BRAC": ["Noakhali"],
+  "STAR IDP": ["Dinajpur North", "Dinajpur South", "Rajshahi", "Naogaon", "Khulna", "Satkhira"],
+  "STAR PNGO": ["Rajshahi", "Sreemangal"],
+  "STAR SPA": ["Barishal", "Noakhali", "Rangpur"],
   "STAR SDF": ["N/A"],
   "STAR UPG": ["N/A"],
-  "IDP STAR": ["N/A", "Dinajpur North", "Dinajpur South", "Rajshahi", "Naogaon", "Khulna", "Satkhira"],
-  "STAR PNGO": ["N/A", "Sreemangal", "Rajshahi"],
 
-  // SILATECH project
-  "SILATECH": ["N/A"],
+  // ED:SILATECH project
+  "SILATECH/ED": ["N/A"],
 
-  // Promise project
-  //"PROMISE": ["N/A"], --- IGNORE ---
+  // PROMISE:SILATECH project
+  "SILATECH/PROMISE": ["N/A"],
   
   // PROSPER project
-  "PROSPER": ["N/A", "Cumilla", "Mymensingh"],
+  "PROSPER": ["Cumilla", "Mymensingh"],
 
   // RETAIL SALES project
   "RETAIL SALES": ["N/A"],
@@ -44,22 +44,34 @@ const zonalArea = {
  * When zonal area is 'N/A', the cascade connects project directly to DM areas
  */
 const projectDmAreaMapping = {
+  /* ISD projects
   "BISD IT": ["Dhaka", "Chattogram", "Sylhet"],
   "BISD TVET": ["Dhaka", "Chattogram", "Sylhet"],
   "BISD Joldhaka": ["Joldhaka"],
   "Care Giver for Japan": ["Dhaka"],
   "PISD": ["Dhaka"],
   "Govt": ["Dhaka"],
-  "STAR BRAC": ["Barishal", "Noakhali", "Rangpur"],
+  */
+
+  // STAR projects
+  "STAR BRAC": [],
+  "STAR IDP": [],
+  "STAR PNGO": [],
   "STAR SPA": [],
-  "STAR RELI": [],
-  "STAR SDF": [],
-  "STAR UPG": [],
-  "IDP STAR": ["Dinajpur North", "Dinajpur South", "Rajshahi", "Naogaon", "Khulna", "Satkhira"],
-  "STAR PNGO": ["Sreemangal", "Rajshahi"],
-  "SILATECH": [],
-  "PROSPER": ["Cumilla", "Mymensingh"],
-  "RETAIL SALES": [],
+  "STAR SDF": ["Indurkani", "Nilphamari", "Haluaghat"],
+  "STAR UPG": ["Azampur", "Pallabi", "Panchlaish", "Bogura"],
+  
+  // ED:SILATECH project
+  "SILATECH/ED": ["Sylhet Sadar", "Joypurhat Sadar"],
+  
+  // PROMISE:SILATECH project
+  "SILATECH/PROMISE": ["Barisal", "Patkelgatha", "Bagerhat", "Mithapukur", "Lalpur", "Joypurhat Sadar", "Sreemangal", "Dashkin Surma"],
+
+  // PROSPER project
+  "PROSPER": [],
+  
+  // RETAIL SALES project
+  "RETAIL SALES": ["RS Daulatpur Center", "RS Pallabi Center", "RS Amborkhana Center", "RS Panchlaish Center", "RS Abdullahpur Center"],
 };
 
 export { zonalArea, projectDmAreaMapping };

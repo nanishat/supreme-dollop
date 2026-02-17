@@ -1,47 +1,118 @@
 /**
- * Zonal Area to DM Area mapping
- * Mapping: Zonal Area -> DM Areas
+ * DM Area to District mapping
+ * Mapping: DM Area -> Districts
  */
 
 const zonalAreaDmAreas = {
-  // STAR Project
-  Noakhali: ["Noakhali", "Khagrachari", "Jamalpur", "Moulvibazar"],
-  Barisal: ["Patuakhali", "Barisal sadar", "Bagerhat", "Jessore"],
-  Rangpur: ["Ullapara", "Joypurhat", "Lalmonirhat", "Thakurgaon"],
+  // ISD Areas
+  "BISD Uttara": ["Uttara", "Dhaka"],
+  Chakaria: ["Chakaria", "Cox's Bazar"],
+  Chattogram: ["Chattogram", "Cumilla", "Chandpur"],
+  "Cox's Bazar Sadar": ["Cox's Bazar Sadar", "Cox's Bazar"],
+  Cumilla: ["Cumilla", "Brahmanbaria"],
+  Dhaka: ["Dhaka", "Gazipur", "Narayanganj"],
+  Khulna: ["Khulna", "Satkhira", "Jashore"],
+  Mymensingh: ["Mymensingh", "Kishoreganj", "Jamalpur"],
+  Rajshahi: ["Rajshahi", "Nawabganj", "Naogaon"],
+  Rangpur: ["Rangpur", "Dinajpur", "Kurigram"],
+  Potiya: ["Potiya", "Chattogram"],
+  Sylhet: ["Sylhet", "Maulvibazar", "Sunamganj"],
+  Ukhiya: ["Ukhiya", "Cox's Bazar"],
 
-  // IDP STAR Project
-  Dinajpur: ["Dinajpur North", "Dinajpur south"],
-  Rajshahi: ["Tanore", "Niamothpur"],
-  Naogaon: ["Mohadevpur", "Patnitala"],
-  Khulna: ["Paikgacha", "Koyra", "Dumuria", "Dakop", "Rupsha", "Digholia"],
-  Satkhira: ["Kolaroa", "Debhata", "Shyamnagar", "Assasuni", "Tala"],
+  // STAR Areas
+  Patuakhali: ["Patuakhali", "Barguna"],
+  Barisal: ["Barisal", "Jhalokathi", "Pirejpur"],
+  "Barisal sadar": ["Barisal", "Barisal Sadar"],
+  Bagerhat: ["Bagerhat", "Khulna"],
+  Jessore: ["Jessore", "Satkhira"],
+  Noakhali: ["Noakhali", "Chandpur", "Laxmipur"],
+  Khagrachari: ["Khagrachari", "Rangamati", "Chattogram"],
+  Jamalpur: ["Jamalpur", "Mymensingh", "Netrokona"],
+  Moulvibazar: ["Moulvibazar", "Sylhet"],
 
-  // PROSPER Project
-  Cumilla: ["Cumilla", "Chattogram", "Dhaka"],
-  Mymensingh: ["Kishoreganj", "Gaibandha"],
+  // STAR Rangpur Areas
+  Ullapara: ["Ullapara", "Gaibandha", "Sirajganj"],
+  Joypurhat: ["Joypurhat", "Naogaon"],
+  Lalmonirhat: ["Lalmonirhat", "Rangpur"],
+  Thakurgaon: ["Thakurgaon", "Panchagarh"],
+  "Joypurhat Sadar": ["Joypurhat", "Natore"],
 
-  // STAR PNGO Project
-  Barguna: ["Barguna Sadar", "Amtali", "Kalapara", "Mirzaganj"],
-  Chapainawabganj: ["Mohadevpur", "Manda", "Nawabganj Sadar", "Patnitala"],
-  Polashbari: ["Palashbari", "Sadullapur", "Gobindaganj", "Saghata"],
-  Sreemangal: ["Sreemangal", "Kamalganj", "Rajnagar"],
-  Sherpur: ["Mohongonj", "Purbodhola", "Kalmakanda"],
-  Ramgamati: ["Khagrachhari Sadar", "Dighinala", "Panchhari", "Rangamati Sadar"],
+  // IDP STAR Dinajpur Areas
+  "Dinajpur sadar": ["Dinajpur", "Dinajpur Sadar"],
+  Birol: ["Birol", "Dinajpur"],
+  Bochagonj: ["Bochaganj", "Dinajpur"],
+  Kharol: ["Kaharol", "Dinajpur"],
+  Birgonj: ["Birganj", "Dinajpur"],
+  Khansama: ["Khansama", "Dinajpur"],
+  Chirirbandar: ["Chirirbandar", "Dinajpur"],
+  Fulbari: ["Fulbari", "Dinajpur"],
+  Birampur: ["Birampur", "Dinajpur"],
+  Nawabganj: ["Nawabganj", "Dinajpur"],
+  Ghoraghat: ["Ghoraghat", "Dinajpur"],
+  Hakimpur: ["Hakimpur", "Dinajpur"],
 
-  // SILATECH Project
-  Sylhet: ["Sylhet Sadar", "Golapgonj", "Sunamgonj Sadar", "Hobigonj Sadar"],
-  Joypurhat: ["Lalmonirhat Sadar", "Mithapukur", "Palashbari", "Joypurhat Sadar"],
-  Barisal: ["Borisal Sadar", "Gournodi", "Jalokathi Sadar"],
-  Patkelgatha: ["Dumuria", "Kaligonj", "PatkelGhata"],
-  Bagerha: ["Bagerhat Sadar", "Botiagatha", "Fokirhat"],
-  Mithapukur: ["Mithapukur", "Palashbari", "Lalmonirhat Sadar"],
-  Lalpur: ["Natore sadar", "Lalpur", "Ishwardi"],
+  // IDP STAR Rajshahi Areas
+  Tanore: ["Tanore", "Rajshahi"],
+  Niamothpur: ["Niamatpur", "Rajshahi"],
 
-  // STAR UPG Project
-  Azampur: ["Azampur", "Notun Bazar", "Gazipur Sadar", "Mymensingh Sadar"],
-  Pallabi: ["Pallabi", "Bhashantek", "Bandar"],
-  Panchlaish: ["Panchlaish", "Bakalia", "Pahartali"],
-  Bogura: ["Bogra Sadar", "Paba", "Motihar"],
+  // IDP STAR Naogaon Areas
+  Mohadevpur: ["Mohadevpur", "Naogaon"],
+  Patnitala: ["Patnitala", "Naogaon"],
+
+  // IDP STAR Khulna Areas
+  Paikgacha: ["Paikgacha", "Khulna"],
+  Koyra: ["Koyra", "Khulna"],
+  Dumuria: ["Dumuria", "Khulna"],
+  Dakop: ["Dakop", "Khulna"],
+  Rupsha: ["Rupsha", "Khulna"],
+  Digholia: ["Digholia", "Khulna"],
+
+  // IDP STAR Satkhira Areas
+  Kolaroa: ["Kalaroa", "Satkhira"],
+  Debhata: ["Debhata", "Satkhira"],
+  Shyamnagar: ["Shyamnagar", "Satkhira"],
+  Assasuni: ["Assasuni", "Satkhira"],
+  Tala: ["Tala", "Satkhira"],
+
+  // PROSPER Areas
+  Kishoreganj: ["Kishoreganj", "Mymensingh"],
+  Gaibandha: ["Gaibandha", "Rangpur"],
+
+  // STAR PNGO Areas
+  Barguna: ["Barguna", "Barisal"],
+  Chapainawabganj: ["Chapainawabganj", "Rajshahi"],
+  Polashbari: ["Palashbari", "Bogura"],
+  Sherpur: ["Sherpur", "Mymensingh"],
+  Sreemangal: ["Sreemangal", "Maulvibazar"],
+  Ramgamati: ["Ramgamati", "Rangamati"],
+  Patkelgatha: ["Patkelgatha", "Barisal"],
+  Bagerha: ["Bagerhat", "Khulna"],
+  Mithapukur: ["Mithapukur", "Rangpur"],
+  Lalpur: ["Lalpur", "Natore"],
+
+  // SILATECH Areas
+  "Sylhet Sadar": ["Sylhet", "Sylhet Sadar"],
+  Golapgonj: ["Golapganj", "Sylhet"],
+  "Sunamgonj Sadar": ["Sunamganj", "Sylhet"],
+
+  // STAR UPG Areas
+  Azampur: ["Azampur", "Gazipur"],
+  Pallabi: ["Pallabi", "Dhaka"],
+  Panchlaish: ["Panchlaish", "Chattogram"],
+  Bogura: ["Bogura", "Rajshahi"],
+
+  // Additional Areas
+  Halishahar: ["Halishahar", "Chattogram"],
+  Jaldhaka: ["Jaldapara", "Dinajpur"],
+  Manikganj: ["Manikganj", "Dhaka"],
+  Mirsharai: ["Mirsharai", "Chattogram"],
+  Nilphamari: ["Nilphamari", "Rangpur"],
+  Kanchan: ["Kanchan", "Rajshahi"],
+  Indurkani: ["Indurkani", "Bogura"],
+  Haluaghat: ["Haluaghat", "Mymensingh"],
+  Daulatpur: ["Daulatpur", "Khulna"],
+  Amraborkhana: ["Amraborkhana", "Rajshahi"],
+  Abdullahpur: ["Abdullahpur", "Dhaka"],
 };
 
 export { zonalAreaDmAreas };

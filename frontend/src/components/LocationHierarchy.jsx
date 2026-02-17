@@ -21,8 +21,10 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
       return formData.project ? (sdpData.projectDmAreaMapping[formData.project] || []) : [];
     }
     
-    // Otherwise, get DM areas from zonal area mapping
-    return sdpData.zonalAreaDmAreas[formData.zonalArea] || [];
+    // Otherwise, get DM areas from nested dmAreas: project -> zonal -> dmAreas
+    if (!formData.project) return [];
+    const projectMap = sdpData.dmAreas[formData.project] || {};
+    return projectMap[formData.zonalArea] || [];
   };
 
   // Check if zonal area is N/A
@@ -30,7 +32,10 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
 
   // Helper function to get branches for selected DM area
   const getBranchesForDMArea = () => {
-    return formData.dmArea ? (sdpData.dmAreas[formData.dmArea] || []) : [];
+    if (!formData.dmArea || !formData.project) return [];
+    // Access nested branches: project -> dmArea -> branches
+    const projectBranches = sdpData.branches[formData.project] || {};
+    return projectBranches[formData.dmArea] || [];
   };
 
   return (
@@ -113,7 +118,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            DM Area <span className="text-red-500">*</span>
+            DM/CL Area <span className="text-red-500">*</span>
           </label>
           <select
             value={formData.dmArea}
@@ -123,7 +128,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
               errors.dmArea ? 'border-red-500' : 'border-gray-300'
             }`}
           >
-            {formData.dmArea === '' && <option value="">Select DM Area</option>}
+            {formData.dmArea === '' && <option value="">Select DM/CL Area</option>}
             {getDMAreasForZonalArea().map(dm => (
               <option key={dm} value={dm}>{dm}</option>
             ))}

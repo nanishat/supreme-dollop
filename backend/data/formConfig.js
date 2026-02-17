@@ -5,6 +5,7 @@
 
 const phases = ["Phase 1", "Phase 2", "Phase 3", "N/A"];
 
+/*
 const errorTypes = [
   "Date of Birth/ Age",
   "Fee",
@@ -17,6 +18,12 @@ const errorTypes = [
   "Batch Change",
   "Missing/Incorrect Photo",
   "Other",
-];
+];*/
 
+const errorTypes = [
+  "Wrong Input (Spelling/Names/Gender/Disability/Address/ etc.)",
+  "Technical Issue / System Troubleshooting",
+  "Operational Issue (e.g. Batch Change, Selection/Deselection, Fee, etc.)",
+  "Exception/Other (e.g. Photo, Trade Name, Birth Certificate/NID, etc.)",
+];
 export { phases, errorTypes };

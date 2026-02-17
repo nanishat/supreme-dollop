@@ -10,9 +10,9 @@
  * - projects: Mapping of components to projects
  * - zonalArea: Mapping of projects to zonal areas
  * - projectDmAreaMapping: Mapping of projects to DM areas (for N/A zonal area cases)
- * - zonalAreaDmAreas: Mapping of zonal areas to DM areas
- * - dmAreas: Mapping of DM areas to branches
- * - branches: Mapping of branches to districts
+ * - dmAreas: Mapping of zonal areas to DM areas
+ * - branches: Mapping of DM areas to branches
+ * - zonalAreaDmAreas: Mapping of DM areas to districts
  * - phases: Form phase options
  * - errorTypes: Form error type options
  */
