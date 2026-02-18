@@ -1,5 +1,5 @@
 import { AlertCircle, Upload, X } from 'lucide-react';
-import mockData from '../../../backend/data';
+import sdpData from '../../../backend/data';
 
 export default function IssueInformation({
   formData,
@@ -31,7 +31,7 @@ export default function IssueInformation({
               }`}
             >
               {formData.phase === '' && <option value="">Select Phase</option>}
-              {mockData.phases.map(phase => (
+              {sdpData.phases.map(phase => (
                 <option key={phase} value={phase}>{phase}</option>
               ))}
             </select>
@@ -55,7 +55,7 @@ export default function IssueInformation({
               }`}
             >
               {formData.errorType === '' && <option value="">Select Error Type</option>}
-              {mockData.errorTypes.map(type => (
+              {sdpData.errorTypes.map(type => (
                 <option key={type} value={type}>{type}</option>
               ))}
             </select>

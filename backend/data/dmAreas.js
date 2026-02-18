@@ -20,20 +20,18 @@ const dmAreas = {
   Satkhira: ["Kolaroa", "Debhata", "Shyamnagar", "Assasuni", "Tala"],
   },
 
+  "STAR PNGO": {
+    Rajshahi: ["Barguna", "Chapainawabganj", "Polashbari"],
+    Sreemangal: ["Mymensingh", "Sherpur", "Sreemangal", "Rangamati"],
+  },
+
   "STAR SPA": {
     Noakhali: ["Jamalpur", "Moulvibazar"],
     Barishal: ["Patuakhali", "Barisal sadar", "Bagerhat", "Jessore"],
     Rangpur: ["Ullapara", "Joypurhat", "Lalmonirhat", "Thakurgaon"],
   },
   
-  "STAR PNGO": {
-    Barguna: ["Barguna Sadar", "Amtali", "Kalapara", "Mirzaganj"],
-    Chapainawabganj: ["Mohadevpur", "Manda", "Nawabganj Sadar", "Patnitala"],
-    Polashbari: ["Palashbari", "Sadullapur", "Gobindaganj", "Saghata"],
-    Sreemangal: ["Sreemangal", "Kamalganj", "Rajnagar"],
-    Sherpur: ["Mohongonj", "Purbodhola", "Kalmakanda"],
-    Ramgamati: ["Khagrachhari Sadar", "Dighinala", "Panchhari", "Rangamati Sadar"],
-  },
+
 
   "STAR UPG": {
     Azampur: ["Azampur", "Notun Bazar", "Gazipur Sadar", "Mymensingh Sadar"],

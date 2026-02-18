@@ -38,16 +38,3 @@ const sdpData = {
 };
 
 export default sdpData;
-
-// Optional: Export individual modules for specific imports
-export {
-  components,
-  projects,
-  zonalArea,
-  projectDmAreaMapping,
-  zonalAreaDmAreas,
-  dmAreas,
-  branches,
-  phases,
-  errorTypes,
-};
