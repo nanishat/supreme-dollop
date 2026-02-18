@@ -1,0 +1,76 @@
+/**
+ * Helper functions for location hierarchy cascading data
+ */
+import sdpData from '../../../backend/data';
+
+/**
+ * Get projects available for the selected component
+ * @param {string} component - The selected component
+ * @returns {Array} - List of projects
+ */
+export const getProjectsForComponent = (component) => {
+  if (!component) return [];
+  return sdpData.projects[component] || [];
+};
+
+/**
+ * Get zonal areas available for the selected project
+ * @param {string} project - The selected project
+ * @returns {Array} - List of zonal areas
+ */
+export const getZonalAreasForProject = (project) => {
+  if (!project) return [];
+  return sdpData.zonalArea[project] || [];
+};
+
+/**
+ * Get DM areas for the selected zonal area
+ * Handles special case when zonal area is 'N/A'
+ * @param {string} project - The selected project
+ * @param {string} zonalArea - The selected zonal area
+ * @returns {Array} - List of DM areas
+ */
+export const getDMAreasForZonalArea = (project, zonalArea) => {
+  if (!zonalArea || !project) return [];
+
+  // If zonal area is N/A, get DM areas from project mapping
+  if (zonalArea === 'N/A') {
+    return sdpData.projectDmAreaMapping[project] || [];
+  }
+
+  // Otherwise, get DM areas from nested structure: project -> zonal -> dmAreas
+  const projectMap = sdpData.dmAreas[project] || {};
+  return projectMap[zonalArea] || [];
+};
+
+/**
+ * Check if the selected zonal area is 'N/A'
+ * @param {string} zonalArea - The selected zonal area
+ * @returns {boolean} - True if zonal area is N/A
+ */
+export const isZonalAreaNA = (zonalArea) => {
+  return zonalArea === 'N/A';
+};
+
+/**
+ * Get branches available for the selected DM area
+ * @param {string} project - The selected project
+ * @param {string} dmArea - The selected DM area
+ * @returns {Array} - List of branches
+ */
+export const getBranchesForDMArea = (project, dmArea) => {
+  if (!dmArea || !project) return [];
+  // Access nested branches: project -> dmArea -> branches
+  const projectBranches = sdpData.branches[project] || {};
+  return projectBranches[dmArea] || [];
+};
+
+/**
+ * Get DM areas for a specific project (used for non-hierarchical access)
+ * @param {string} project - The selected project
+ * @returns {Array} - All DM areas for the project
+ */
+export const getDMAreasForProject = (project) => {
+  if (!project) return [];
+  return sdpData.projectDmAreaMapping[project] || [];
+};

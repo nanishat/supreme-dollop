@@ -1,42 +1,14 @@
 import { AlertCircle } from 'lucide-react';
 import sdpData from '../../../backend/data';
+import {
+  getProjectsForComponent,
+  getZonalAreasForProject,
+  getDMAreasForZonalArea,
+  isZonalAreaNA,
+  getBranchesForDMArea
+} from '../utils/hierarchyHelpers';
 
 export default function LocationHierarchy({ formData, errors, onCascadeChange }) {
-  // Helper function to get projects for selected component
-  const getProjectsForComponent = () => {
-    return formData.component ? (sdpData.projects[formData.component] || []) : [];
-  };
-
-  // Helper function to get zonal areas for selected project
-  const getZonalAreasForProject = () => {
-    return formData.project ? (sdpData.zonalArea[formData.project] || []) : [];
-  };
-
-  // Helper function to get DM areas for selected zonal area or project (when N/A)
-  const getDMAreasForZonalArea = () => {
-    if (!formData.zonalArea) return [];
-    
-    // If zonal area is N/A, get DM areas from project mapping
-    if (formData.zonalArea === 'N/A') {
-      return formData.project ? (sdpData.projectDmAreaMapping[formData.project] || []) : [];
-    }
-    
-    // Otherwise, get DM areas from nested dmAreas: project -> zonal -> dmAreas
-    if (!formData.project) return [];
-    const projectMap = sdpData.dmAreas[formData.project] || {};
-    return projectMap[formData.zonalArea] || [];
-  };
-
-  // Check if zonal area is N/A
-  const isZonalAreaNA = formData.zonalArea === 'N/A';
-
-  // Helper function to get branches for selected DM area
-  const getBranchesForDMArea = () => {
-    if (!formData.dmArea || !formData.project) return [];
-    // Access nested branches: project -> dmArea -> branches
-    const projectBranches = sdpData.branches[formData.project] || {};
-    return projectBranches[formData.dmArea] || [];
-  };
 
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
@@ -81,7 +53,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             {formData.project === '' && <option value="">Select Project</option>}
-            {getProjectsForComponent().map(proj => (
+            {getProjectsForComponent(formData.component).map(proj => (
               <option key={proj} value={proj}>{proj}</option>
             ))}
           </select>
@@ -105,7 +77,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             {formData.zonalArea === '' && <option value="">Select Zonal Area</option>}
-            {getZonalAreasForProject().map(zone => (
+            {getZonalAreasForProject(formData.project).map(zone => (
               <option key={zone} value={zone}>{zone}</option>
             ))}
           </select>
@@ -129,7 +101,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             }`}
           >
             {formData.dmArea === '' && <option value="">Select DM/CL Area</option>}
-            {getDMAreasForZonalArea().map(dm => (
+            {getDMAreasForZonalArea(formData.project, formData.zonalArea).map(dm => (
               <option key={dm} value={dm}>{dm}</option>
             ))}
           </select>
@@ -151,13 +123,13 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
             className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
           >
             {formData.branchName === '' && <option value="">Select Branch (Optional)</option>}
-            {getBranchesForDMArea().map(branch => (
+            {getBranchesForDMArea(formData.project, formData.dmArea).map(branch => (
               <option key={branch} value={branch}>{branch}</option>
             ))}
           </select>
         </div>
 
-        <div className={!isZonalAreaNA ? 'hidden' : ''}>
+        <div className={!isZonalAreaNA(formData.zonalArea) ? 'hidden' : ''}>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             District Name
           </label>

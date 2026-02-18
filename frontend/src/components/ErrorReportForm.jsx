@@ -5,153 +5,49 @@ import LocationHierarchy from './LocationHierarchy';
 import IssueInformation from './IssueInformation';
 import SuccessMessage from './SuccessMessage';
 import Footer from './Footer';
+import { getInitialFormData } from '../utils/formDefaults';
+import { handleInputChange, handleCascadeChange, handleFileChange, removeFile } from '../utils/formHandlers';
+import { validateForm } from '../utils/validation';
+import { handleFormSubmission } from '../utils/api';
 
 export default function ErrorReportForm() {
-  const [formData, setFormData] = useState({
-    reporterEmail: '',
-    reporterName: '',
-    reporterPin: '',
-    reporterPhone: '',
-    supervisor1NamePin: '',
-    supervisor2NamePin: '',
-    component: '',
-    project: '',
-    zonalArea: '',
-    dmArea: '',
-    branchName: '',
-    districtName: '',
-    phase: '',
-    errorType: '',
-    issueDescription: '',
-    attachment: null
-  });
-
+  const [formData, setFormData] = useState(getInitialFormData());
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
+  const handleChange = (e) => handleInputChange(e, setFormData, setErrors);
 
-  const handleCascadeChange = (field, value) => {
-    const updates = { [field]: value };
-    
-    // Reset dependent fields
-    if (field === 'component') {
-      updates.project = '';
-      updates.zonalArea = '';
-      updates.dmArea = '';
-      updates.branchName = '';
-      updates.districtName = '';
-    } else if (field === 'project') {
-      updates.zonalArea = '';
-      updates.dmArea = '';
-      updates.branchName = '';
-      updates.districtName = '';
-    } else if (field === 'zonalArea') {
-      updates.dmArea = '';
-      updates.branchName = '';
-      updates.districtName = '';
-    } else if (field === 'dmArea') {
-      updates.branchName = '';
-      updates.districtName = '';
-    } else if (field === 'branchName') {
-      updates.districtName = '';
-    }
-    
-    setFormData(prev => ({ ...prev, ...updates }));
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: '' }));
-    }
-  };
+  const handleCascade = (field, value) => handleCascadeChange(field, value, setFormData, setErrors);
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setFormData(prev => ({ ...prev, attachment: file }));
-    }
-  };
+  const handleFile = (e) => handleFileChange(e, setFormData);
 
-  const removeFile = () => {
-    setFormData(prev => ({ ...prev, attachment: null }));
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.reporterEmail) newErrors.reporterEmail = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.reporterEmail)) newErrors.reporterEmail = 'Invalid email format';
-    
-    if (!formData.reporterName) newErrors.reporterName = 'Reporter name is required';
-    if (!formData.reporterPin) newErrors.reporterPin = 'Reporter PIN is required';
-    if (!formData.reporterPhone) newErrors.reporterPhone = 'Phone number is required';
-    if (!formData.supervisor1NamePin) newErrors.supervisor1NamePin = '1st supervisor is required';
-    if (!formData.supervisor2NamePin) newErrors.supervisor2NamePin = '2nd supervisor is required';
-    if (!formData.component) newErrors.component = 'Component is required';
-    if (!formData.project) newErrors.project = 'Project is required';
-    if (!formData.zonalArea) newErrors.zonalArea = 'Zonal Area is required';
-    if (!formData.dmArea) newErrors.dmArea = 'DM Area is required';
-    // Branch Name is optional for now
-    if (!formData.phase) newErrors.phase = 'Phase is required';
-    if (!formData.errorType) newErrors.errorType = 'Error Type is required';
-    if (!formData.issueDescription) newErrors.issueDescription = 'Issue description is required';
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  const removeAttachment = () => removeFile(setFormData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!validateForm()) return;
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-    try {
-      const resp = await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      if (!resp.ok) {
-        const payload = await resp.json().catch(() => ({}));
-        setErrors(prev => ({ ...prev, submit: payload.message || 'Submission failed' }));
-        return;
-      }
-
-      // success
-      setErrors({});
+    const success = await handleFormSubmission(formData, setErrors);
+    
+    if (success) {
       setSubmitted(true);
 
       // Reset form after 3 seconds
       setTimeout(() => {
-        setFormData({
-          reporterEmail: '',
-          reporterName: '',
-          reporterPin: '',
-          reporterPhone: '',
-          supervisor1NamePin: '',
-          supervisor2NamePin: '',
-          component: '',
-          project: '',
-          zonalArea: '',
-          dmArea: '',
-          branchName: '',
-          districtName: '',
-          phase: '',
-          errorType: '',
-          issueDescription: '',
-          attachment: null
-        });
+        setFormData(getInitialFormData());
         setSubmitted(false);
       }, 3000);
-    } catch (err) {
-      console.error('Submission error', err);
-      setErrors(prev => ({ ...prev, submit: err.message || 'Network error' }));
     }
+  };
+
+  const handleReset = () => {
+    setFormData(getInitialFormData());
+    setErrors({});
   };
 
   return (
@@ -168,37 +64,17 @@ export default function ErrorReportForm() {
                 {errors.submit}
               </div>
             )}
-            <ReporterInfo formData={formData} errors={errors} onChange={handleInputChange} />
+            <ReporterInfo formData={formData} errors={errors} onChange={handleChange} />
 
-            <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascadeChange} />
+            <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascade} />
 
             <IssueInformation
               formData={formData}
               errors={errors}
-              onChange={handleInputChange}
-              onFileChange={handleFileChange}
-              onRemoveFile={removeFile}
-              onReset={() => {
-                setFormData({
-                  reporterEmail: '',
-                  reporterName: '',
-                  reporterPin: '',
-                  reporterPhone: '',
-                  supervisor1NamePin: '',
-                  supervisor2NamePin: '',
-                  component: '',
-                  project: '',
-                  zonalArea: '',
-                  dmArea: '',
-                  branchName: '',
-                  districtName: '',
-                  phase: '',
-                  errorType: '',
-                  issueDescription: '',
-                  attachment: null
-                });
-                setErrors({});
-              }}
+              onChange={handleChange}
+              onFileChange={handleFile}
+              onRemoveFile={removeAttachment}
+              onReset={handleReset}
               onSubmit={handleSubmit}
             />
           </form>
