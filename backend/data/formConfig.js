@@ -21,9 +21,9 @@ const errorTypes = [
 ];*/
 
 const errorTypes = [
-  "Wrong Input (Spelling/Names/Gender/Disability/Address/ etc.)",
-  "Technical Issue / System Troubleshooting",
-  "Operational Issue (e.g. Batch Change, Selection/Deselection, Fee, etc.)",
-  "Exception/Other (e.g. Photo, Trade Name, Birth Certificate/NID, etc.)",
+  "Wrong Input (Spelling/Names/Gender/Disability/Address/etc.)",
+  "Technical Issue/System Troubleshooting",
+  "Operational Decision (Batch Change, Selection/Deselection, Fee, etc.)",
+  "Exception/Other (Photo, Trade Name, Birth Certificate/NID, etc.)",
 ];
 export { phases, errorTypes };

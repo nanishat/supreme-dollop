@@ -28,7 +28,7 @@ const branches = {
       "STAR Sherpur Sadar",
     ],
   },
-  /* ------------------------------------------------------------------------ */
+  
   /* STAR SPA */
   "STAR SPA": {
     // STAR SPA - Noakhali
@@ -102,7 +102,7 @@ const branches = {
       "STAR Saidpur",
     ],
   },
-  /* ------------------------------------------------------------------------ */
+  
   /* STAR IDP */ 
   "STAR IDP": {
     // STAR IDP - Dinajpur North
@@ -204,7 +204,8 @@ const branches = {
     Assasuni: ["B2B Towerdanga", "B2B Assasuni 1", "B2B Assasuni 2"],
     Tala: ["B2B Tala 1", "B2B Tala 2"],
   },
-  /* ------------------------------------------------------------------------ */
+  
+  /* STAR PNGO */
   "STAR PNGO": {
     // STAR PNGO - Rajshahi
     Barguna: [
@@ -293,166 +294,105 @@ const branches = {
       "STAR PNGO Kaptai"
     ],
   },
-  /* ------------------------------------------------------------------------ */
   
-
+  /* STAR SDF */
+  "STAR SDF": {
+    Indurkani: ["STAR SDF Indurkani", "STAR SDF Galachipa", "STAR SDF Dashmina", "STAR SDF Bhandaria"],
+    Nilphamari: ["STAR SDF Nilphamari Sadar", "STAR SDF Kaunia", "STAR SDF Bochaganj", "STAR SDF Ulipur", "STAR SDF Hatibandha"],
+    Haluaghat: ["STAR SDF Kishoreganj Sadar", "STAR SDF Durgapur", "STAR SDF Dhobaura", "STAR SDF Sreebardi", "STAR SDF Haluaghat"],
+  },
+ 
+  /* STAR UPG */
+  "STAR UPG": {
+    Azampur: ["STAR UPG Notun Bazar", "STAR UPG Azampur", "STAR UPG Gazipur Sadar 1", "STAR UPG Gazipur Sadar 2", "STAR UPG Tongi East", "STAR UPG Mymensingh Sadar"],
+    Pallabi: ["STAR UPG Easternhousing", "STAR UPG Bhashantek", "STAR UPG Pallabi", "STAR UPG Shitalakkha", "STAR UPG Adamji", "STAR UPG Bandar"],
+    Panchlaish: ["STAR UPG Sugandha", "STAR UPG Bakalia", "STAR UPG Pahartali", "STAR UPG Firingi Bazar", "STAR UPG Lalkhan", "STAR UPG Cornelhat"],
+    Bogura: ["STAR UPG Paba", "STAR UPG Motihar", "STAR UPG Mollapara", "STAR UPG Bogra Urban", "STAR UPG Bogra Sadar", "STAR UPG Kamal Kachna", "STAR UPG Satgara"],
+  },
   
+  /* ED:SILATECH */
+  "SILATECH/ED": {
+    "Sylhet Sadar": ["ED/Sylhet Sadar", "ED/Golapgonj", "ED/Sunamgonj Sadar", "ED/Hobigonj Sadar", "ED/Moulovibazar Sadar", "ED/Sreemongal"],
+    "Joypurhat Sadar": ["ED/Lalmonirhat Sadar", "ED/Mithapukur", "ED/Palashbari", "ED/Ishwardi", "ED/Lalpur", "ED/Panchbibi"],
+  },
 
-  
+  /* PROMISE:SILATECH */
+  "SILATECH/PROMISE": {
+    "Barisal": ["Silatech-PROMISE Barisal Sadar", "Silatech-PROMISE Gournodi", "Silatech-PROMISE Jhalokathi"],
+    "Patkelgatha": ["Silatech-PROMISE Dumuria", "Silatech-PROMISE Kaligonj", "Silatech-PROMISE PatkelGhata"],
+    "Bagerhat": ["Silatech-PROMISE Bagerhat Sadar", "Silatech-PROMISE Botiagatha", "Silatech-PROMISE Fokirhat"],
+    "Mithapukur": ["Silatech-PROMISE Mithapukur", "Silatech-PROMISE Palashbari", "Silatech-PROMISE Lalmonirhat Sadar"],
+    "Lalpur": ["Silatech-PROMISE Natore Sadar", "Silatech-PROMISE Lalpur", "Silatech-PROMISE Ishwardi"],
+    "Joypurhat Sadar": ["Silatech-PROMISE Joypurhat Sadar", "Silatech-PROMISE Patnitola", "Silatech-PROMISE Panchbibi"],
+    "Sreemangal": ["Silatech-PROMISE Sreemangal", "Silatech-PROMISE Kulaura", "Silatech-PROMISE Shyastagonj"],
+    "Dakshin Surma": ["Silatech-PROMISE Golapgonj", "Silatech-PROMISE Dakshin Surma", "Silatech-PROMISE Chatak"],
+  },
 
-  // // PROSPER - Cumilla
-  // Cumilla: [
-  //   "PROSPER Comilla Sadar",
-  //   "PROSPER Laksham",
-  //   "PROSPER Noakhali Sadar",
-  //   "PROSPER Companyganj",
-  //   "PROSPER Brahmanbaria Sadar",
-  //   "PROSPER Chandpur Sadar",
-  //   "PROSPER Lakshmipur Sadar",
-  //   "PROSPER Muradnagar",
-  // ],
-  // Chattogram: [
-  //   "PROSPER Feni Sadar",
-  //   "PROSPER Pashlish",
-  //   "PROSPER Kornelhat",
-  //   "PROSPER Hat hazari",
-  //   "PROSPER Patiya",
-  //   "PROSPER Keranirhat",
-  //   "PROSPER Fatikchhari",
-  //   "PROSPER Mirsharai",
-  // ],
-  // Dhaka: [
-  //   "PROSPER Banosree",
-  //   "PROSPER Jatrabari",
-  //   "PROSPER Badda",
-  //   "PROSPER Monohardi",
-  //   "PROSPER Mirpur",
-  //   "PROSPER Madhabdi",
-  //   "PROSPER Shibpur",
-  //   "PROSPER Madhupur",
-  // ],
+  /* PROSPER */
+  "PROSPER": {
+    // PROSPER - Cumilla
+    Cumilla: [
+      "PROSPER Comilla Sadar",
+      "PROSPER Laksham",
+      "PROSPER Noakhali Sadar",
+      "PROSPER Companyganj",
+      "PROSPER Brahmanbaria Sadar",
+      "PROSPER Chandpur Sadar",
+      "PROSPER Lakshmipur Sadar",
+      "PROSPER Muradnagar",
+    ],
+    Chattogram: [
+      "PROSPER Feni Sadar",
+      "PROSPER Pashlish",
+      "PROSPER Kornelhat",
+      "PROSPER Hat hazari",
+      "PROSPER Patiya",
+      "PROSPER Keranirhat",
+      "PROSPER Fatikchhari",
+      "PROSPER Mirsharai",
+    ],
+    Dhaka: [
+      "PROSPER Banosree",
+      "PROSPER Jatrabari",
+      "PROSPER Badda",
+      "PROSPER Monohardi",
+      "PROSPER Mirpur",
+      "PROSPER Madhabdi",
+      "PROSPER Shibpur",
+      "PROSPER Madhupur",
+    ],
 
-  // // PROSPER - Mymensingh
-  // Kishoreganj: [
-  //   "PROSPER Mymensingh Sadar",
-  //   "PROSPER Islampur",
-  //   "PROSPER Jamalpur Sadar",
-  //   "PROSPER Kishoregonj Sadar",
-  //   "PROSPER Dakshin Surma",
-  //   "PROSPER Fenchuganj",
-  //   "PROSPER Sreemangal",
-  //   "PROSPER Habiganj Sadar",
-  // ],
-  // Gaibandha: [
-  //   "PROSPER Gaibandha Sadar",
-  //   "PROSPER Gobindaganj",
-  //   "PROSPER Saidpur",
-  //   "PROSPER Dinajpur Sadar",
-  //   "PROSPER Fulbari",
-  //   "PROSPER Bogra Sadar",
-  //   "PROSPER Sherpur",
-  //   "PROSPER Naogaon Sadar",
-  // ],
+    // PROSPER - Mymensingh
+    Kishoreganj: [
+      "PROSPER Mymensingh Sadar",
+      "PROSPER Islampur",
+      "PROSPER Jamalpur Sadar",
+      "PROSPER Kishoregonj Sadar",
+      "PROSPER Dakshin Surma",
+      "PROSPER Fenchuganj",
+      "PROSPER Sreemangal",
+      "PROSPER Habiganj Sadar",
+    ],
+    Gaibandha: [
+      "PROSPER Gaibandha Sadar",
+      "PROSPER Gobindaganj",
+      "PROSPER Saidpur",
+      "PROSPER Dinajpur Sadar",
+      "PROSPER Fulbari",
+      "PROSPER Bogra Sadar",
+      "PROSPER Sherpur",
+      "PROSPER Naogaon Sadar",
+    ],
+  },
 
-  
-
-  // // SILATECH - ED
-  // "Sylhet Sadar": [
-  //   "ED/Sylhet Sadar",
-  //   "ED/Golapgonj",
-  // ],
-  // Golapgonj: [
-  //   "ED/Sunamgonj Sadar",
-  //   "ED/Hobigonj Sadar",
-  // ],
-  // "Sunamgonj Sadar": [
-  //   "ED/Moulovibazar Sadar",
-  //   "ED/Sreemongal",
-  // ],
-  // "Lalmonirhat Sadar": [
-  //   "ED/Lalmonirhat Sadar",
-  //   "ED/Mithapukur",
-  // ],
-  // Mithapukur: [
-  //   "ED/Palashbari",
-  //   "ED/Ishwardi",
-  // ],
-  // Palashbari: [
-  //   "ED/Chatmohor",
-  //   "ED/Panchbibi",
-  // ],
-  // "Joypurhat Sadar": [
-  //   "ED/Joypurhat Sadar",
-  //   "ED/Natore Sadar",
-  //   "ED/Naogaon Sadar",
-  // ],
-
-  // // SILATECH - PROMISE
-  // "Borisal Sadar": [
-  //   "Silatech-PROMISE Borisal Sadar",
-  //   "Silatech-PROMISE Gournodi",
-  // ],
-  // "Jalokathi Sadar": [
-  //   "Silatech-PROMISE Jalokathi Sadar",
-  //   "Silatech-PROMISE Dumuria",
-  // ],
-  // Dumuria: [
-  //   "Silatech-PROMISE Kaligonj",
-  //   "Silatech-PROMISE PatkelGhata",
-  // ],
-  // Kaligonj: [
-  //   "Silatech-PROMISE Bagerhat Sadar",
-  //   "Silatech-PROMISE Botiagatha",
-  // ],
-  // PatkelGhata: [
-  //   "Silatech-PROMISE Fokirhat",
-  //   "Silatech-PROMISE Mithapukur",
-  // ],
-  // "Natore sadar": [
-  //   "Silatech-PROMISE Natore sadar",
-  //   "Silatech-PROMISE Lalpur",
-  // ],
-  // Ishwardi: [
-  //   "Silatech-PROMISE Ishwardi",
-  //   "Silatech-PROMISE Joypurhat Sadar",
-  // ],
-
-  // // STAR UPG
-  // Azampur: [
-  //   "STAR UPG Notun Bazar",
-  //   "STAR UPG Azampur",
-  //   "STAR UPG Gazipur Sadar 1",
-  //   "STAR UPG Gazipur Sadar 2",
-  // ],
-  // "Notun Bazar": [
-  //   "STAR UPG Tongi East",
-  //   "STAR UPG Mymensingh Sadar",
-  // ],
-  // Pallabi: [
-  //   "STAR UPG Easternhousing",
-  //   "STAR UPG Bhashantek",
-  //   "STAR UPG Pallabi",
-  //   "STAR UPG Shitalakkha",
-  //   "STAR UPG Adamji",
-  //   "STAR UPG Bandar",
-  // ],
-  // Panchlaish: [
-  //   "STAR UPG Sugandha",
-  //   "STAR UPG Bakalia",
-  //   "STAR UPG Pahartali",
-  //   "STAR UPG Firingi Bazar",
-  //   "STAR UPG Lalkhan",
-  //   "STAR UPG Cornelhat",
-  // ],
-  // "Bogra Sadar": [
-  //   "STAR UPG Paba",
-  //   "STAR UPG Motihar",
-  //   "STAR UPG Mollapara",
-  //   "STAR UPG Bogra Urban",
-  //   "STAR UPG Bogra Sadar",
-  //   "STAR UPG Kamal Kachna",
-  //   "STAR UPG Satgara",
-  // ],
+  /* RETAIL SALES */
+  "RETAIL SALES": {
+    "RS Daulatpur Center": ["RS Daulatpur 1", "RS Daulatpur 2", "RS Daulatpur 3", "RS Daulatpur 4"],
+    "RS Pallabi Center": ["RS Pallabi 1", "RS Pallabi 2", "RS Pallabi 3", "RS Pallabi 4"],
+    "RS Amborkhana Center": ["RS Amborkhana 1", "RS Amborkhana 2", "RS Amborkhana 3", "RS Amborkhana 4"],
+    "RS Panchlaish Center": ["RS Panchlaish 1", "RS Panchlaish 2", "RS Panchlaish 3", "RS Panchlaish 4"],
+    "RS Abdullahpur Center": ["RS Abdullahpur 1", "RS Abdullahpur 2", "RS Abdullahpur 3", "RS Abdullahpur 4"],
+  },
 };
 
 export default branches;

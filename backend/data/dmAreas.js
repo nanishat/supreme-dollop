@@ -31,34 +31,11 @@ const dmAreas = {
     Rangpur: ["Ullapara", "Joypurhat", "Lalmonirhat", "Thakurgaon"],
   },
   
-
-
-  "STAR UPG": {
-    Azampur: ["Azampur", "Notun Bazar", "Gazipur Sadar", "Mymensingh Sadar"],
-    Pallabi: ["Pallabi", "Bhashantek", "Bandar"],
-    Panchlaish: ["Panchlaish", "Bakalia", "Pahartali"],
-    Bogura: ["Bogra Sadar", "Paba", "Motihar"],
-  },
-
-
-
+  // PROSPER project
   "PROSPER": {
     Cumilla: ["Cumilla", "Chattogram", "Dhaka"],
     Mymensingh: ["Kishoreganj", "Gaibandha"],
   },
-
-  
-
-  "SILATECH": {
-    Sylhet: ["Sylhet Sadar", "Golapgonj", "Sunamgonj Sadar", "Hobigonj Sadar"],
-    Joypurhat: ["Lalmonirhat Sadar", "Mithapukur", "Palashbari", "Joypurhat Sadar"],
-    "Barisal (SILATECH)": ["Borisal Sadar", "Gournodi", "Jalokathi Sadar"],
-    Patkelgatha: ["Dumuria", "Kaligonj", "PatkelGhata"],
-    Bagerha: ["Bagerhat Sadar", "Botiagatha", "Fokirhat"],
-    Mithapukur: ["Mithapukur", "Palashbari", "Lalmonirhat Sadar"],
-    Lalpur: ["Natore sadar", "Lalpur", "Ishwardi"],
-  },
-
 };
 
 export default dmAreas;

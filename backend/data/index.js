@@ -12,7 +12,6 @@
  * - projectDmAreaMapping: Mapping of projects to DM areas (for N/A zonal area cases)
  * - dmAreas: Mapping of zonal areas to DM areas
  * - branches: Mapping of DM areas to branches
- * - zonalAreaDmAreas: Mapping of DM areas to districts
  * - phases: Form phase options
  * - errorTypes: Form error type options
  */
@@ -20,7 +19,6 @@
 import components from './components.js';
 import projects from './projects.js';
 import { zonalArea, projectDmAreaMapping } from './zonalAreas.js';
-import { zonalAreaDmAreas } from './zonalAreaDmAreas.js';
 import dmAreas from './dmAreas.js';
 import branches from './branches.js';
 import { phases, errorTypes } from './formConfig.js';
@@ -30,7 +28,6 @@ const sdpData = {
   projects,
   zonalArea,
   projectDmAreaMapping,
-  zonalAreaDmAreas,
   dmAreas,
   branches,
   phases,
