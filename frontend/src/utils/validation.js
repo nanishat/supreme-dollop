@@ -36,7 +36,7 @@ export const validateForm = (formData) => {
   if (!formData.project) newErrors.project = 'Project is required';
   if (!formData.zonalArea) newErrors.zonalArea = 'Zonal Area is required';
   if (!formData.dmArea) newErrors.dmArea = 'DM Area is required';
-  // Branch Name is optional for now
+  if (!formData.branchName) newErrors.branchName = 'Branch Name is required';
 
   // Issue info validation
   if (!formData.phase) newErrors.phase = 'Phase is required';

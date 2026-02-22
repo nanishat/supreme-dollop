@@ -114,19 +114,26 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Branch Name
+            Branch Name <span className="text-red-500">*</span>
           </label>
           <select
             value={formData.branchName}
             onChange={(e) => onCascadeChange('branchName', e.target.value)}
             disabled={!formData.dmArea}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed border-gray-300"
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
+              errors.branchName ? 'border-red-500' : 'border-gray-300'
+            }`}
           >
-            {formData.branchName === '' && <option value="">Select Branch (Optional)</option>}
+            {formData.branchName === '' && <option value="">Select Branch</option>}
             {getBranchesForDMArea(formData.project, formData.dmArea).map(branch => (
               <option key={branch} value={branch}>{branch}</option>
             ))}
           </select>
+          {errors.branchName && (
+            <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+              <AlertCircle size={12} /> {errors.branchName}
+            </p>
+          )}
         </div>
 
         <div className={!isZonalAreaNA(formData.zonalArea) ? 'hidden' : ''}>
