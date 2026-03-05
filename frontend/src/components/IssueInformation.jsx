@@ -90,7 +90,7 @@ export default function IssueInformation({
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Attachment (Optional)
+            Attachment (if necessary)
           </label>
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
             {formData.attachment ? (

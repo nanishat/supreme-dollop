@@ -8,14 +8,12 @@
  */
 
 const zonalArea = {
-  /* ISD projects
-  "BISD IT": ["N/A", "Dhaka", "Chattogram", "Sylhet"],
-  "BISD TVET": ["N/A", "Dhaka", "Chattogram", "Sylhet"],
-  "BISD Joldhaka": ["N/A", "Joldhaka"],
-  "Care Giver for Japan": ["N/A", "Dhaka"],
-  "PISD": ["N/A", "Dhaka"],
-  "Govt": ["N/A", "Dhaka"],
-  */
+  // ISD projects
+  "BISD IT": ["N/A"],
+  "BISD TVET": ["N/A"],
+  "Care Giver for Japan": ["N/A"],
+  "PISD": ["N/A"],
+  "Govt": ["N/A"],
  
   // STAR projects
   "STAR BRAC": ["Noakhali"],
@@ -44,14 +42,12 @@ const zonalArea = {
  * When zonal area is 'N/A', the cascade connects project directly to DM areas
  */
 const projectDmAreaMapping = {
-  /* ISD projects
-  "BISD IT": ["Dhaka", "Chattogram", "Sylhet"],
-  "BISD TVET": ["Dhaka", "Chattogram", "Sylhet"],
-  "BISD Joldhaka": ["Joldhaka"],
-  "Care Giver for Japan": ["Dhaka"],
+  // ISD projects
+  "BISD IT": ["Dhaka", "Chattogram", "Cumilla", "Halishahar", "Sylhet", "Rangpur"],
+  "BISD TVET": ["Dhaka", "Manikganj", "Mirsharai", "Nilphamari", "Narayanganj"],
+  "Care Giver for Japan": ["Dhaka", "Haluaghat", "Narayanganj", "Mirsharai"],
   "PISD": ["Dhaka"],
-  "Govt": ["Dhaka"],
-  */
+  "Govt": ["Dhaka", "Nilphamari", "Narayanganj"],
 
   // STAR projects
   "STAR BRAC": [],

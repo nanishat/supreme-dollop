@@ -393,6 +393,43 @@ const branches = {
     "RS Panchlaish Center": ["RS Panchlaish 1", "RS Panchlaish 2", "RS Panchlaish 3", "RS Panchlaish 4"],
     "RS Abdullahpur Center": ["RS Abdullahpur 1", "RS Abdullahpur 2", "RS Abdullahpur 3", "RS Abdullahpur 4"],
   },
+
+
+  /* N/A cases (directly connected to DM areas) */
+  // ISD projects
+  "BISD IT": {
+    "Dhaka": ["BISD Jaldhaka", "BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Chattogram": ["BISD Chattogram"],
+    "Cumilla": ["BISD Cumilla"],
+    "Halishahar": ["BISD Halishahar"],
+    "Sylhet": ["BISD Sylhet"],
+    "Rangpur": ["BISD Rangpur"],
+  },
+
+  "BISD TVET": {
+    "Dhaka": ["BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Manikganj": ["BISD Manikganj"],
+    "Mirsharai": ["BISD Mirsharai"],
+    "Nilphamari": ["BISD Nilphamari"],
+    "Narayanganj": ["BISD Narayanganj"],
+  },
+
+  "Care Giver for Japan": {
+    "Dhaka": ["BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Haluaghat": ["BISD Haluaghat"],
+    "Narayanganj": ["BISD Narayanganj"],
+    "Mirsharai": ["BISD Mirsharai"],
+  },
+
+  "PISD": {
+    "Dhaka": ["PISD Dhour/SDC", "PISD Bamnartek/EWHRC", "PISD Norsinghpur/DTC", "PISD keraniganj/ZVTC"],
+  },
+
+  "Govt": {
+    "Dhaka": ["BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Nilphamari": ["BISD Nilphamari"],
+    "Narayanganj": ["BISD Narayanganj"],
+  },
 };
 
 export default branches;
