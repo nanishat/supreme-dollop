@@ -7,8 +7,7 @@ export default function IssueInformation({
   onChange,
   onFileChange,
   onRemoveFile,
-  onReset,
-  onSubmit
+  onReset
 }) {
   return (
     <section className="bg-white rounded-lg shadow-md p-6">

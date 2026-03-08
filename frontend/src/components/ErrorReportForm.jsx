@@ -64,9 +64,9 @@ export default function ErrorReportForm() {
                 {errors.submit}
               </div>
             )}
-            <ReporterInfo formData={formData} errors={errors} onChange={handleChange} />
-
             <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascade} />
+
+            <ReporterInfo formData={formData} errors={errors} onChange={handleChange} />
 
             <IssueInformation
               formData={formData}
@@ -75,7 +75,6 @@ export default function ErrorReportForm() {
               onFileChange={handleFile}
               onRemoveFile={removeAttachment}
               onReset={handleReset}
-              onSubmit={handleSubmit}
             />
           </form>
         )}

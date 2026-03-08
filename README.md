@@ -186,8 +186,8 @@ src/
 ├── components/          # React components
 │   ├── ErrorReportForm.jsx      # Main form container
 │   ├── FormHeader.jsx           # Page header
-│   ├── ReporterInfo.jsx         # Reporter details section
 │   ├── LocationHierarchy.jsx    # Location/project selection
+│   ├── ReporterInfo.jsx         # Reporter details section
 │   ├── IssueInformation.jsx     # Issue details and attachment
 │   ├── SuccessMessage.jsx       # Success confirmation
 │   └── Footer.jsx               # Page footer
