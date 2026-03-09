@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import FormHeader from './FormHeader';
-import ReporterInfo from './ReporterInfo';
-import LocationHierarchy from './LocationHierarchy';
+import ReporterInformation from './ReporterInformation';
+import ProjectInformation from './ProjectInformation';
 import IssueInformation from './IssueInformation';
 import SuccessMessage from './SuccessMessage';
 import Footer from './Footer';
@@ -64,9 +64,9 @@ export default function ErrorReportForm() {
                 {errors.submit}
               </div>
             )}
-            <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascade} />
+            <ProjectInformation formData={formData} errors={errors} onCascadeChange={handleCascade} />
 
-            <ReporterInfo
+            <ReporterInformation
               formData={formData}
               errors={errors}
               onChange={handleChange}

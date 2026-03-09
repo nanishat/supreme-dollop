@@ -7,12 +7,12 @@ import {
   getBranchesForDMArea
 } from '../utils/hierarchyHelpers';
 
-export default function LocationHierarchy({ formData, errors, onCascadeChange }) {
+export default function ProjectInformation({ formData, errors, onCascadeChange }) {
 
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
-        Location & Project Hierarchy
+        Project Information
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

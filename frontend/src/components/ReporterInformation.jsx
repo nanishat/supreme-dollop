@@ -1,7 +1,7 @@
 import { AlertCircle } from 'lucide-react';
 import { getFirstSupervisorsForProject, getSecondSupervisorsForProject } from '../utils/hierarchyHelpers';
 
-export default function ReporterInfo({ formData, errors, onChange, onCascade, project }) {
+export default function ReporterInformation({ formData, errors, onChange, onCascade, project }) {
   // derive supervisor lists; first supervisor cascades from second supervisor
   const firstSupervisors = project ? getFirstSupervisorsForProject(project) : [];
   const secondSupervisors = project ? getSecondSupervisorsForProject(project) : [];
@@ -9,7 +9,7 @@ export default function ReporterInfo({ formData, errors, onChange, onCascade, pr
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
-        Reporter & People Information
+        Reporter Information
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
