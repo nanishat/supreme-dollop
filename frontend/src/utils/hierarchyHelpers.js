@@ -74,3 +74,33 @@ export const getDMAreasForProject = (project) => {
   if (!project) return [];
   return sdpData.projectDmAreaMapping[project] || [];
 };
+
+/**
+ * Get supervisors available for the selected project
+ * @param {string} project - The selected project
+ * @returns {Array} - List of supervisors with name only
+ */
+export const getSupervisorsForProject = (project) => {
+  if (!project) return [];
+  return sdpData.supervisors[project] || [];
+};
+
+/**
+ * Get all supervisors from all projects
+ * @returns {Array} - List of all supervisors with name and PIN
+ */
+export const getAllSupervisors = () => {
+  const allSupervisors = [];
+  const supervisorSet = new Set(); // To avoid duplicates by name
+
+  Object.values(sdpData.supervisors).forEach(projectSupervisors => {
+    projectSupervisors.forEach(supervisor => {
+      if (!supervisorSet.has(supervisor.name)) {
+        supervisorSet.add(supervisor.name);
+        allSupervisors.push(supervisor);
+      }
+    });
+  });
+
+  return allSupervisors.sort((a, b) => a.name.localeCompare(b.name));
+};

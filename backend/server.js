@@ -71,7 +71,7 @@ app.post("/api/submit", async (req, res) => {
 
     const columns = (
       process.env.GOOGLE_SHEET_COLUMNS ||
-      "timestamp,reporterEmail,reporterName,reporterPin,reporterPhone,supervisor1NamePin,supervisor2NamePin,component,project,zonalArea,dmArea,branchName,districtName,phase,errorType,issueDescription,attachment"
+      "timestamp,reporterEmail,reporterName,reporterPin,reporterPhone,supervisor1Name,supervisor2Name,component,project,zonalArea,dmArea,branchName,districtName,phase,errorType,issueDescription,attachment"
     ).split(",").map(c => c.trim());
 
     const row = columns.map((c) => {

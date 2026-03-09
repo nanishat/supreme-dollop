@@ -1,6 +1,7 @@
 import { AlertCircle } from 'lucide-react';
+import { getSupervisorsForProject } from '../utils/hierarchyHelpers';
 
-export default function ReporterInfo({ formData, errors, onChange }) {
+export default function ReporterInfo({ formData, errors, onChange, project }) {
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
@@ -96,46 +97,58 @@ export default function ReporterInfo({ formData, errors, onChange }) {
           )}
         </div>
 
-        {/* Supervisor 1 Name & PIN */}
+        {/* Supervisor 1 Name */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            1st Supervisor Name & PIN <span className="text-red-500">*</span>
+            1st Supervisor Name <span className="text-red-500">*</span>
           </label>
-          <input
-            type="text"
-            name="supervisor1NamePin"
-            value={formData.supervisor1NamePin}
+          <select
+            name="supervisor1Name"
+            value={formData.supervisor1Name}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
-              errors.supervisor1NamePin ? 'border-red-500' : 'border-gray-300'
+            disabled={!project}
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
+              errors.supervisor1Name ? 'border-red-500' : 'border-gray-300'
             }`}
-            placeholder="Supervisor 1 Name + PIN"
-          />
-          {errors.supervisor1NamePin && (
+          >
+            {formData.supervisor1Name === '' && <option value="">Select 1st Supervisor</option>}
+            {getSupervisorsForProject(project).map(supervisor => (
+              <option key={supervisor.name} value={supervisor.name}>
+                {supervisor.name}
+              </option>
+            ))}
+          </select>
+          {errors.supervisor1Name && (
             <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-              <AlertCircle size={12} /> {errors.supervisor1NamePin}
+              <AlertCircle size={12} /> {errors.supervisor1Name}
             </p>
           )}
         </div>
 
-        {/* Supervisor 2 Name & PIN */}
+        {/* Supervisor 2 Name */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            2nd Supervisor Name & PIN <span className="text-red-500">*</span>
+            2nd Supervisor Name <span className="text-red-500">*</span>
           </label>
-          <input
-            type="text"
-            name="supervisor2NamePin"
-            value={formData.supervisor2NamePin}
+          <select
+            name="supervisor2Name"
+            value={formData.supervisor2Name}
             onChange={onChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
-              errors.supervisor2NamePin ? 'border-red-500' : 'border-gray-300'
+            disabled={!project}
+            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
+              errors.supervisor2Name ? 'border-red-500' : 'border-gray-300'
             }`}
-            placeholder="Supervisor 2 Name + PIN"
-          />
-          {errors.supervisor2NamePin && (
+          >
+            {formData.supervisor2Name === '' && <option value="">Select 2nd Supervisor</option>}
+            {getSupervisorsForProject(project).map(supervisor => (
+              <option key={supervisor.name} value={supervisor.name}>
+                {supervisor.name}
+              </option>
+            ))}
+          </select>
+          {errors.supervisor2Name && (
             <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-              <AlertCircle size={12} /> {errors.supervisor2NamePin}
+              <AlertCircle size={12} /> {errors.supervisor2Name}
             </p>
           )}
         </div>

@@ -21,6 +21,7 @@ import projects from './projects.js';
 import { zonalArea, projectDmAreaMapping } from './zonalAreas.js';
 import dmAreas from './dmAreas.js';
 import branches from './branches.js';
+import supervisors from './supervisors.js';
 import { phases, errorTypes } from './formConfig.js';
 
 const sdpData = {
@@ -30,6 +31,7 @@ const sdpData = {
   projectDmAreaMapping,
   dmAreas,
   branches,
+  supervisors,
   phases,
   errorTypes,
 };

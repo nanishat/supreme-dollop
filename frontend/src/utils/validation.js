@@ -28,8 +28,8 @@ export const validateForm = (formData) => {
   if (!formData.reporterPhone) newErrors.reporterPhone = 'Phone number is required';
 
   // Supervisor validation
-  if (!formData.supervisor1NamePin) newErrors.supervisor1NamePin = '1st supervisor is required';
-  if (!formData.supervisor2NamePin) newErrors.supervisor2NamePin = '2nd supervisor is required';
+  if (!formData.supervisor1Name) newErrors.supervisor1Name = '1st supervisor is required';
+  if (!formData.supervisor2Name) newErrors.supervisor2Name = '2nd supervisor is required';
 
   // Location hierarchy validation
   if (!formData.component) newErrors.component = 'Component is required';

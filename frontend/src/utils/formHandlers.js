@@ -33,11 +33,15 @@ export const handleCascadeChange = (field, value, setFormData, setErrors) => {
   // Reset dependent fields based on which field changed
   if (field === 'component') {
     updates.project = '';
+    updates.supervisor1Name = '';
+    updates.supervisor2Name = '';
     updates.zonalArea = '';
     updates.dmArea = '';
     updates.branchName = '';
     updates.districtName = '';
   } else if (field === 'project') {
+    updates.supervisor1Name = '';
+    updates.supervisor2Name = '';
     updates.zonalArea = '';
     updates.dmArea = '';
     updates.branchName = '';
