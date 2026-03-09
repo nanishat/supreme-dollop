@@ -66,7 +66,13 @@ export default function ErrorReportForm() {
             )}
             <LocationHierarchy formData={formData} errors={errors} onCascadeChange={handleCascade} />
 
-            <ReporterInfo formData={formData} errors={errors} onChange={handleChange} project={formData.project} />
+            <ReporterInfo
+              formData={formData}
+              errors={errors}
+              onChange={handleChange}
+              onCascade={handleCascade}
+              project={formData.project}
+            />
 
             <IssueInformation
               formData={formData}

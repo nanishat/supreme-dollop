@@ -4,7 +4,6 @@ import {
   getProjectsForComponent,
   getZonalAreasForProject,
   getDMAreasForZonalArea,
-  isZonalAreaNA,
   getBranchesForDMArea
 } from '../utils/hierarchyHelpers';
 

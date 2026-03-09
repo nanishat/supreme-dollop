@@ -1,7 +1,13 @@
 import { AlertCircle } from 'lucide-react';
-import { getSupervisorsForProject } from '../utils/hierarchyHelpers';
+import { getFirstSupervisorsForProject, getSecondSupervisorsForProject } from '../utils/hierarchyHelpers';
 
-export default function ReporterInfo({ formData, errors, onChange, project }) {
+export default function ReporterInfo({ formData, errors, onChange, onCascade, project }) {
+  // derive supervisor lists; first supervisor cascades from second supervisor
+  const firstSupervisors = project ? getFirstSupervisorsForProject(project) : [];
+  const secondSupervisors = project ? getSecondSupervisorsForProject(project) : [];
+  const supervisor2Value = formData.supervisor2Name;
+  const firstOptions = firstSupervisors.filter(s => s.name !== supervisor2Value);
+
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-primary-500">
@@ -112,7 +118,7 @@ export default function ReporterInfo({ formData, errors, onChange, project }) {
             }`}
           >
             {formData.supervisor1Name === '' && <option value="">Select 1st Supervisor</option>}
-            {getSupervisorsForProject(project).map(supervisor => (
+            {firstOptions.map(supervisor => (
               <option key={supervisor.name} value={supervisor.name}>
                 {supervisor.name}
               </option>
@@ -133,14 +139,17 @@ export default function ReporterInfo({ formData, errors, onChange, project }) {
           <select
             name="supervisor2Name"
             value={formData.supervisor2Name}
-            onChange={onChange}
+            onChange={e => {
+              onChange(e);
+              if (onCascade) onCascade('supervisor2Name', e.target.value);
+            }}
             disabled={!project}
             className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.supervisor2Name ? 'border-red-500' : 'border-gray-300'
             }`}
           >
             {formData.supervisor2Name === '' && <option value="">Select 2nd Supervisor</option>}
-            {getSupervisorsForProject(project).map(supervisor => (
+            {secondSupervisors.map(supervisor => (
               <option key={supervisor.name} value={supervisor.name}>
                 {supervisor.name}
               </option>

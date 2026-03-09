@@ -21,7 +21,7 @@ A full-stack web application for submitting and tracking error reports and troub
 
 - **Comprehensive Error Reporting Form**
   - Reporter information collection (name, email, phone, PIN)
-  - Supervisor tracking (dual supervisor system)
+  - Supervisor tracking (dual supervisor system) with separate 1st and 2nd supervisor datasets and reverse‑cascading dropdowns ensuring unique selection
   - Hierarchical location selection (component → project → zonal area → DM area → branch)
   - Issue categorization with phase and error type selection
   - Detailed issue description with markdown support

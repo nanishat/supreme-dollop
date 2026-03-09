@@ -28,32 +28,44 @@ export const handleInputChange = (e, setFormData, setErrors) => {
  * @param {Function} setErrors - State setter for errors
  */
 export const handleCascadeChange = (field, value, setFormData, setErrors) => {
-  const updates = { [field]: value };
+  // treat supervisor2Name specially since first supervisor depends on it
+  if (field === 'supervisor2Name') {
+    setFormData(prev => {
+      const next = { ...prev, supervisor2Name: value };
+      // if user picks the same name as existing supervisor1, clear supervisor1
+      if (prev.supervisor1Name && prev.supervisor1Name === value) {
+        next.supervisor1Name = '';
+      }
+      return next;
+    });
+  } else {
+    const updates = { [field]: value };
 
-  // Reset dependent fields based on which field changed
-  if (field === 'component') {
-    updates.project = '';
-    updates.supervisor1Name = '';
-    updates.supervisor2Name = '';
-    updates.zonalArea = '';
-    updates.dmArea = '';
-    updates.branchName = '';
-  } else if (field === 'project') {
-    updates.supervisor1Name = '';
-    updates.supervisor2Name = '';
-    updates.zonalArea = '';
-    updates.dmArea = '';
-    updates.branchName = '';
-  } else if (field === 'zonalArea') {
-    updates.dmArea = '';
-    updates.branchName = '';
-  } else if (field === 'dmArea') {
-    updates.branchName = '';
-  } else if (field === 'branchName') {
-    // districtName removed from form
+    // Reset dependent fields based on which field changed
+    if (field === 'component') {
+      updates.project = '';
+      updates.supervisor1Name = '';
+      updates.supervisor2Name = '';
+      updates.zonalArea = '';
+      updates.dmArea = '';
+      updates.branchName = '';
+    } else if (field === 'project') {
+      updates.supervisor1Name = '';
+      updates.supervisor2Name = '';
+      updates.zonalArea = '';
+      updates.dmArea = '';
+      updates.branchName = '';
+    } else if (field === 'zonalArea') {
+      updates.dmArea = '';
+      updates.branchName = '';
+    } else if (field === 'dmArea') {
+      updates.branchName = '';
+    } else if (field === 'branchName') {
+      // districtName removed from form
+    }
+
+    setFormData(prev => ({ ...prev, ...updates }));
   }
-
-  setFormData(prev => ({ ...prev, ...updates }));
 
   if (setErrors) {
     setErrors(prev => {

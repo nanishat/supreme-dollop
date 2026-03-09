@@ -86,6 +86,26 @@ export const getSupervisorsForProject = (project) => {
 };
 
 /**
+ * Get first supervisors available for the selected project
+ * @param {string} project - The selected project
+ * @returns {Array} - List of first supervisors with name only
+ */
+export const getFirstSupervisorsForProject = (project) => {
+  if (!project) return [];
+  return sdpData.firstSupervisors[project] || [];
+};
+
+/**
+ * Get second supervisors available for the selected project
+ * @param {string} project - The selected project
+ * @returns {Array} - List of second supervisors with name only
+ */
+export const getSecondSupervisorsForProject = (project) => {
+  if (!project) return [];
+  return sdpData.secondSupervisors[project] || [];
+};
+
+/**
  * Get all supervisors from all projects
  * @returns {Array} - List of all supervisors with name and PIN
  */
@@ -93,7 +113,16 @@ export const getAllSupervisors = () => {
   const allSupervisors = [];
   const supervisorSet = new Set(); // To avoid duplicates by name
 
-  Object.values(sdpData.supervisors).forEach(projectSupervisors => {
+  Object.values(sdpData.firstSupervisors).forEach(projectSupervisors => {
+    projectSupervisors.forEach(supervisor => {
+      if (!supervisorSet.has(supervisor.name)) {
+        supervisorSet.add(supervisor.name);
+        allSupervisors.push(supervisor);
+      }
+    });
+  });
+
+  Object.values(sdpData.secondSupervisors).forEach(projectSupervisors => {
     projectSupervisors.forEach(supervisor => {
       if (!supervisorSet.has(supervisor.name)) {
         supervisorSet.add(supervisor.name);
