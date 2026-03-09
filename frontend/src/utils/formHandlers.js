@@ -38,23 +38,19 @@ export const handleCascadeChange = (field, value, setFormData, setErrors) => {
     updates.zonalArea = '';
     updates.dmArea = '';
     updates.branchName = '';
-    updates.districtName = '';
   } else if (field === 'project') {
     updates.supervisor1Name = '';
     updates.supervisor2Name = '';
     updates.zonalArea = '';
     updates.dmArea = '';
     updates.branchName = '';
-    updates.districtName = '';
   } else if (field === 'zonalArea') {
     updates.dmArea = '';
     updates.branchName = '';
-    updates.districtName = '';
   } else if (field === 'dmArea') {
     updates.branchName = '';
-    updates.districtName = '';
   } else if (field === 'branchName') {
-    updates.districtName = '';
+    // districtName removed from form
   }
 
   setFormData(prev => ({ ...prev, ...updates }));

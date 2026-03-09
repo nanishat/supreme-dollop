@@ -275,7 +275,6 @@ Submit an error report.
   "zonalArea": "Zonal Area",
   "dmArea": "DM Area",
   "branchName": "Branch Name",
-  "districtName": "District Name",
   "phase": "Phase",
   "errorType": "Error Type",
   "issueDescription": "Detailed description",

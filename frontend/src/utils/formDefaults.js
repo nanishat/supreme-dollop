@@ -13,7 +13,6 @@ export const getInitialFormData = () => ({
   zonalArea: '',
   dmArea: '',
   branchName: '',
-  districtName: '',
   phase: '',
   errorType: '',
   issueDescription: '',

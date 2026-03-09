@@ -136,18 +136,7 @@ export default function LocationHierarchy({ formData, errors, onCascadeChange })
           )}
         </div>
 
-        <div className={!isZonalAreaNA(formData.zonalArea) ? 'hidden' : ''}>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            District Name
-          </label>
-          <input
-            type="text"
-            value={formData.districtName}
-            onChange={(e) => onCascadeChange('districtName', e.target.value)}
-            placeholder="Enter District Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none"
-          />
-        </div>
+
       </div>
     </section>
   );
