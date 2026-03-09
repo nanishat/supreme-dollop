@@ -11,7 +11,7 @@ const secondSupervisors = {
     { name: "Nasir Uddin/RM"}
   ],
   "Care Giver for Japan": [
-    { name: "Tom Anderson" }
+    { name: "Abdullah Al Mamun/HO" }
   ],
   "PISD": [
     { name: "Sharif Ahamed Nayem/HO" }
@@ -20,34 +20,60 @@ const secondSupervisors = {
     { name: "Nasir Uddin/RM" }
   ],
   "SILATECH/ED": [
-    { name: "Chris Miller" }
+    { name: "Aslam Hakim/DM" },
+    { name: "Shishir Ranjan/DM" },
   ],
   "SILATECH/PROMISE": [
-    { name: "Paul Rodriguez" }
+    { name: "Rupash Biswas/DM" },
+    { name: "Golam Rasul/DM" },
+    { name: "Mizanur Rahman/DM" },
+    { name: "Mominul Islam/DM" },
+    { name: "Hafejur Rahman/DM" },
+    { name: "Firoz Ahmed/DM" },
+    { name: "Mazharul Haque/DM" },
+    { name: "AsmaUl Hosna/DM" }
   ],
   "PROSPER": [
-    { name: "Mark Johnson" }
+    { name: "Dharma Narayan/ZM" },
+    { name: "Mostafizur Rahman/ZM" },
   ],
   "STAR BRAC": [
-    { name: "Steven Brown" }
+    { name: "Khaled Mahmud/ZM" }
   ],
   "STAR IDP": [
-    { name: "Daniel Taylor" }
+    { name: "Bijoy Tigga/RM" },
+    { name: "Juwel Hossain/RM" },
+    { name: "Easir Arafat/RM" },
+    { name: "Jonas Soren/RM" },
+    { name: "Elias Farazi/RM" },
+    { name: "Nayan Kumar/RM" }
   ],
   "STAR PNGO": [
-    { name: "Kevin Martinez" }
+    { name: "Farhad Hossain/ZM" },
+    { name: "Afzal Hossain/ZM" }
   ],
   "STAR SDF": [
-    { name: "Brian Lee" }
+    { name: "Krishna Roy/DM" },
+    { name: "Sujon Shahin/DM" },
+    { name: "Nayan Kumar/DM" }
   ],
   "STAR SPA": [
-    { name: "Ronald Thompson" }
+    { name: "Khaled Mahmud/ZM" },
+    { name: "Utpal Biswas/ZM" },
+    { name: "Hasina Akhter/ZM" }
   ],
   "STAR UPG": [
-    { name: "Anthony Wilson" }
+    { name: "Efat Zahan/DM" },
+    { name: "Saidul Islam/DM" },
+    { name: "Sudipta Kumar/DM" },
+    { name: "Tanjila Sheikh/DM" }
   ],
   "RETAIL SALES": [
-    { name: "Jason Taylor" }
+    { name: "Biswajit Roy/DM" },
+    { name: "Abdul Momin/DM" },
+    { name: "Shayed Amad/DM" },
+    { name: "Ayesha Siddika/DM" },
+    { name: "Rownak Jahan/DM" }
   ]
 };
 
