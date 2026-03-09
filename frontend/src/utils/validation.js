@@ -8,6 +8,20 @@
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
 /**
+ * Issue description validation regex - checks for required ID patterns
+ */
+const ID_REGEX = /(EID-\d{6}|BISD-\d{6}|Lrnr-\d{9}|MCP-\d{9})/;
+
+/**
+ * Validate issue description for required ID patterns
+ * @param {string} text - The issue description text to validate
+ * @returns {boolean} - True if text contains a valid ID pattern
+ */
+export const validateIssueDescription = (text) => {
+  return ID_REGEX.test(text);
+};
+
+/**
  * Validate form data and return errors object
  * @param {Object} formData - The form data to validate
  * @returns {Object} - Object with field names as keys and error messages as values
@@ -41,7 +55,11 @@ export const validateForm = (formData) => {
   // Issue info validation
   if (!formData.phase) newErrors.phase = 'Phase is required';
   if (!formData.errorType) newErrors.errorType = 'Error Type is required';
-  if (!formData.issueDescription) newErrors.issueDescription = 'Issue description is required';
+  if (!formData.issueDescription) {
+    newErrors.issueDescription = 'Issue description is required';
+  } else if (!validateIssueDescription(formData.issueDescription)) {
+    newErrors.issueDescription = 'Issue description must contain one of: EID-######, BISD-######, Lrnr-#########, or MCP-#########';
+  }
 
   return newErrors;
 };
