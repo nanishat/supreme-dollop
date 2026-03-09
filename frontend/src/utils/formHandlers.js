@@ -28,16 +28,9 @@ export const handleInputChange = (e, setFormData, setErrors) => {
  * @param {Function} setErrors - State setter for errors
  */
 export const handleCascadeChange = (field, value, setFormData, setErrors) => {
-  // treat supervisor2Name specially since first supervisor depends on it
   if (field === 'supervisor2Name') {
-    setFormData(prev => {
-      const next = { ...prev, supervisor2Name: value };
-      // if user picks the same name as existing supervisor1, clear supervisor1
-      if (prev.supervisor1Name && prev.supervisor1Name === value) {
-        next.supervisor1Name = '';
-      }
-      return next;
-    });
+    // supervisor2 doesn't cascade anymore; just update the value
+    setFormData(prev => ({ ...prev, supervisor2Name: value }));
   } else {
     const updates = { [field]: value };
 

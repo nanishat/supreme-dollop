@@ -427,7 +427,7 @@ const branches = {
 
   "Govt": {
     "Dhaka": ["BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
-    "Nilphamari": ["BISD Nilphamari"],
+    "Nilphamari": ["BISD Nilphamari 1", "BISD Nilphamari 2"],
     "Narayanganj": ["BISD Narayanganj"],
   },
 };

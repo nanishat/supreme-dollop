@@ -5,19 +5,19 @@
 
 const secondSupervisors = {
   "BISD IT": [
-    { name: "Mike Davis" }
+    { name: "Sohel Miah/AM" }
   ],
   "BISD TVET": [
-    { name: "David Wilson"}
+    { name: "Nasir Uddin/RM"}
   ],
   "Care Giver for Japan": [
     { name: "Tom Anderson" }
   ],
   "PISD": [
-    { name: "Robert Lee" }
+    { name: "Sharif Ahamed Nayem/HO" }
   ],
   "Govt": [
-    { name: "James Taylor" }
+    { name: "Nasir Uddin/RM" }
   ],
   "SILATECH/ED": [
     { name: "Chris Miller" }

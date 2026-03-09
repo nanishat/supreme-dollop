@@ -5,8 +5,6 @@ export default function ReporterInfo({ formData, errors, onChange, onCascade, pr
   // derive supervisor lists; first supervisor cascades from second supervisor
   const firstSupervisors = project ? getFirstSupervisorsForProject(project) : [];
   const secondSupervisors = project ? getSecondSupervisorsForProject(project) : [];
-  const supervisor2Value = formData.supervisor2Name;
-  const firstOptions = firstSupervisors.filter(s => s.name !== supervisor2Value);
 
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
@@ -118,7 +116,7 @@ export default function ReporterInfo({ formData, errors, onChange, onCascade, pr
             }`}
           >
             {formData.supervisor1Name === '' && <option value="">Select 1st Supervisor</option>}
-            {firstOptions.map(supervisor => (
+            {firstSupervisors.map(supervisor => (
               <option key={supervisor.name} value={supervisor.name}>
                 {supervisor.name}
               </option>

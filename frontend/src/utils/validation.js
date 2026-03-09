@@ -31,17 +31,6 @@ export const validateForm = (formData) => {
   if (!formData.supervisor1Name) newErrors.supervisor1Name = '1st supervisor is required';
   if (!formData.supervisor2Name) newErrors.supervisor2Name = '2nd supervisor is required';
 
-  // Supervisors must be unique
-  if (
-    formData.supervisor1Name &&
-    formData.supervisor2Name &&
-    formData.supervisor1Name === formData.supervisor2Name
-  ) {
-    const message = 'Supervisor names must be different';
-    newErrors.supervisor1Name = message;
-    newErrors.supervisor2Name = message;
-  }
-
   // Location hierarchy validation
   if (!formData.component) newErrors.component = 'Component is required';
   if (!formData.project) newErrors.project = 'Project is required';
