@@ -37,39 +37,30 @@ const firstSupervisors = {
     },
     "Narayanganj": [{ name: "Shopan Ali/AL" }]
   },
-  // For projects with 'N/A' zonal area, supervisors are listed directly under the project
-  "SILATECH/ED": [
-    { name: "Aslam Hakim/DM" },
-    { name: "Lokman Hossan/INST" },
-    { name: "Mehedi Hasan/INST/CL" },
-    { name: "Mohammad Omar Sharif/Instructor"},
-    { name: "Mostofa Sazid/INST" },
-    { name: "Hasanur Rahman" }
-  ],
-  "SILATECH/ED": [
-    { name: "Aslam Hakim/DM" },
-    { name: "Shishir Ranjan/DM" },
-  ],
-  "SILATECH/PROMISE": [
-    { name: "Rupash Biswas/DM" },
-    { name: "Golam Rasul/DM" },
-    { name: "Mizanur Rahman/DM" },
-    { name: "Mominul Islam/DM" },
-    { name: "Hafejur Rahman/DM" },
-    { name: "Firoz Ahmed/DM" },
-    { name: "Mazharul Haque/DM" },
-    { name: "AsmaUl Hosna/DM" }
-  ],
-  "PROSPER": [
-    { name: "Belayet Hossain/DM" },
-    { name: "Subhadra Paul/DM" },
-    { name: "Mosarof Hossain/DM" },
-    { name: "Mahera Begum/DM" },
-    { name: "Suzit Dhar/DM" },
-    { name: "Bahauddin /DM" },
-    { name: "Morshed Alam/DM" },
-    { name: "Sazder Hosen/DM" },
-  ],
+  "SILATECH/ED": {
+    "Sylhet Sadar": [{ name: "Aslam Hakim/DM" }],
+    "Joypurhat Sadar": [{ name: "Shishir Ranjan/DM" }],
+  },
+  "SILATECH/PROMISE": {
+    "Barishal" : [{ name: "Rupash Biswas/DM" }],
+    "Patkelgatha" : [{ name: "Golam Rasul/DM" }],
+    "Bagerhat" : [{ name: "Mizanur Rahman/DM" }],
+    "Mithapukur" : [{ name: "Mominul Islam/DM" }],
+    "Lalpur" : [{ name: "Hafejur Rahman/DM" }],
+    "Joypurhat Sadar" : [{ name: "Firoz Ahmed/DM" }],
+    "Dakshin Surma" : [{ name: "Mazharul Haque/DM" }],
+    "Sreemangal" : [{ name: "Asmaul Hosna/DM" }]
+  },
+  "PROSPER": {
+    "Cumilla": [{ name: "Belayet Hossain/DM" }],
+    "Feni": [{ name: "Subhadra Paul/DM" }],
+    "Pashlish": [{ name: "Mosarof Hossain/DM" }],
+    "Dhaka": [{ name: "Mahera Begum/DM" }],
+    "Mymensingh": [{ name: "Suzit Dhar/DM" }],
+    "Sreemangal": [{ name: "Bahauddin /DM" }],
+    "Gaibandha": [{ name: "Morshed Alam/DM" }],
+    "Bogra": [{ name: "Sazder Hosen/DM" }]
+  },
   "STAR BRAC": [
     { name: "Abdul Khalek/DM" },
     { name: "Touhidul Islam/DM" },
@@ -135,13 +126,13 @@ const firstSupervisors = {
     { name: "Sudipta Kumar/DM" },
     { name: "Tanjila Sheikh/DM" }
   ],
-  "RETAIL SALES": [
-    { name: "Biswajit Roy/DM" },
-    { name: "Abdul Momin/DM" },
-    { name: "Shayed Amad/DM" },
-    { name: "Ayesha Siddika/DM" },
-    { name: "Rownak Jahan/DM" }
-  ]
+  "RETAIL SALES": {
+    "RS Daulatpur Center": [{ name: "Biswajit Roy/DM" }],
+    "RS Pallabi Center": [{ name: "Abdul Momin/DM" }],
+    "RS Amborkhana Center": [{ name: "Shayed Amad/DM" }],
+    "RS Panchlaish Center": [{ name: "Ayesha Siddika/DM" }],
+    "RS Abdullahpur Center": [{ name: "Rownak Jahan/DM" }]
+  }
 };
 
 export default firstSupervisors;

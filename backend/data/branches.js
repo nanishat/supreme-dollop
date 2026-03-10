@@ -313,19 +313,19 @@ const branches = {
   /* ED:SILATECH */
   "SILATECH/ED": {
     "Sylhet Sadar": ["ED/Sylhet Sadar", "ED/Golapgonj", "ED/Sunamgonj Sadar", "ED/Hobigonj Sadar", "ED/Moulovibazar Sadar", "ED/Sreemongal"],
-    "Joypurhat Sadar": ["ED/Lalmonirhat Sadar", "ED/Mithapukur", "ED/Palashbari", "ED/Ishwardi", "ED/Lalpur", "ED/Panchbibi"],
+    "Joypurhat Sadar": ["ED/Lalmonirhat Sadar", "ED/Mithapukur", "ED/Palashbari", "ED/Ishwardi", "ED/Lalpur", "ED/Panchbibi", "ED/Joypurhat Sadar", "ED/Natore Sadar", "ED/Patnitala"],
   },
 
   /* PROMISE:SILATECH */
   "SILATECH/PROMISE": {
-    "Barisal": ["Silatech-PROMISE Barisal Sadar", "Silatech-PROMISE Gournodi", "Silatech-PROMISE Jhalokathi"],
+    "Barishal": ["Silatech-PROMISE Barishal Sadar", "Silatech-PROMISE Gournodi", "Silatech-PROMISE Jhalokathi Sadar"],
     "Patkelgatha": ["Silatech-PROMISE Dumuria", "Silatech-PROMISE Kaligonj", "Silatech-PROMISE PatkelGhata"],
     "Bagerhat": ["Silatech-PROMISE Bagerhat Sadar", "Silatech-PROMISE Botiagatha", "Silatech-PROMISE Fokirhat"],
     "Mithapukur": ["Silatech-PROMISE Mithapukur", "Silatech-PROMISE Palashbari", "Silatech-PROMISE Lalmonirhat Sadar"],
     "Lalpur": ["Silatech-PROMISE Natore Sadar", "Silatech-PROMISE Lalpur", "Silatech-PROMISE Ishwardi"],
     "Joypurhat Sadar": ["Silatech-PROMISE Joypurhat Sadar", "Silatech-PROMISE Patnitola", "Silatech-PROMISE Panchbibi"],
-    "Sreemangal": ["Silatech-PROMISE Sreemangal", "Silatech-PROMISE Kulaura", "Silatech-PROMISE Shyastagonj"],
     "Dakshin Surma": ["Silatech-PROMISE Golapgonj", "Silatech-PROMISE Dakshin Surma", "Silatech-PROMISE Chatak"],
+    "Sreemangal": ["Silatech-PROMISE Sreemangal", "Silatech-PROMISE Kulaura", "Silatech-PROMISE Shyastagonj"],
   },
 
   /* PROSPER */
@@ -334,55 +334,62 @@ const branches = {
     Cumilla: [
       "PROSPER Comilla Sadar",
       "PROSPER Laksham",
-      "PROSPER Noakhali Sadar",
-      "PROSPER Companyganj",
-      "PROSPER Brahmanbaria Sadar",
       "PROSPER Chandpur Sadar",
       "PROSPER Lakshmipur Sadar",
       "PROSPER Muradnagar",
     ],
-    Chattogram: [
+    Feni: [
       "PROSPER Feni Sadar",
-      "PROSPER Pashlish",
       "PROSPER Kornelhat",
+      "PROSPER Noakhali Sadar",
+      "PROSPER Companyganj",
+      "PROSPER Mirsharai",
+    ],
+    Pashlish: [
+      "PROSPER Pashlish",
       "PROSPER Hat hazari",
       "PROSPER Patiya",
       "PROSPER Keranirhat",
       "PROSPER Fatikchhari",
-      "PROSPER Mirsharai",
+      
     ],
     Dhaka: [
       "PROSPER Banosree",
       "PROSPER Jatrabari",
       "PROSPER Badda",
-      "PROSPER Monohardi",
       "PROSPER Mirpur",
-      "PROSPER Madhabdi",
-      "PROSPER Shibpur",
-      "PROSPER Madhupur",
+      "PROSPER Madhabdi"
     ],
 
     // PROSPER - Mymensingh
-    Kishoreganj: [
+    Mymensingh: [
       "PROSPER Mymensingh Sadar",
-      "PROSPER Islampur",
-      "PROSPER Jamalpur Sadar",
-      "PROSPER Kishoregonj Sadar",
+      "PROSPER Madhupur",
+      "PROSPER Shibpur",
+      "PROSPER Monohardi",
+      "PROSPER Kishoregonj Sadar"
+    ],
+    Sreemangal: [
+      "PROSPER Brahmanbaria Sadar",
       "PROSPER Dakshin Surma",
       "PROSPER Fenchuganj",
       "PROSPER Sreemangal",
-      "PROSPER Habiganj Sadar",
+      "PROSPER Habiganj Sadar"
     ],
     Gaibandha: [
       "PROSPER Gaibandha Sadar",
       "PROSPER Gobindaganj",
       "PROSPER Saidpur",
       "PROSPER Dinajpur Sadar",
-      "PROSPER Fulbari",
+      "PROSPER Fulbari"
+    ],
+    Bogra: [
       "PROSPER Bogra Sadar",
       "PROSPER Sherpur",
       "PROSPER Naogaon Sadar",
-    ],
+      "PROSPER Islampur",
+      "PROSPER Jamalpur Sadar"
+    ]
   },
 
   /* RETAIL SALES */

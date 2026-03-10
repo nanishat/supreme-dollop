@@ -61,7 +61,7 @@ const projectDmAreaMapping = {
   "SILATECH/ED": ["Sylhet Sadar", "Joypurhat Sadar"],
   
   // PROMISE:SILATECH project
-  "SILATECH/PROMISE": ["Barisal", "Patkelgatha", "Bagerhat", "Mithapukur", "Lalpur", "Joypurhat Sadar", "Sreemangal", "Dakshin Surma"],
+  "SILATECH/PROMISE": ["Barishal", "Patkelgatha", "Bagerhat", "Mithapukur", "Lalpur", "Joypurhat Sadar", "Dakshin Surma", "Sreemangal"],
 
   // PROSPER project
   "PROSPER": [],

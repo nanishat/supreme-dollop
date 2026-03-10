@@ -33,8 +33,8 @@ const dmAreas = {
   
   // PROSPER project
   "PROSPER": {
-    Cumilla: ["Cumilla", "Chattogram", "Dhaka"],
-    Mymensingh: ["Kishoreganj", "Gaibandha"],
+    Cumilla: ["Cumilla", "Feni", "Pashlish", "Dhaka"],
+    Mymensingh: ["Mymensingh", "Sreemangal", "Gaibandha", "Bogra"],
   },
 };
 

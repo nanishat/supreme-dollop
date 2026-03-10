@@ -37,24 +37,30 @@ const secondSupervisors = {
     },
     "Narayanganj": [{ name: "Nasir Uddin/RM" }]
   },
-  "SILATECH/ED": [
-    { name: "Aslam Hakim/DM" },
-    { name: "Shishir Ranjan/DM" },
-  ],
-  "SILATECH/PROMISE": [
-    { name: "Rupash Biswas/DM" },
-    { name: "Golam Rasul/DM" },
-    { name: "Mizanur Rahman/DM" },
-    { name: "Mominul Islam/DM" },
-    { name: "Hafejur Rahman/DM" },
-    { name: "Firoz Ahmed/DM" },
-    { name: "Mazharul Haque/DM" },
-    { name: "AsmaUl Hosna/DM" }
-  ],
-  "PROSPER": [
-    { name: "Dharma Narayan/ZM" },
-    { name: "Mostafizur Rahman/ZM" },
-  ],
+  "SILATECH/ED": {
+    "Sylhet Sadar": [{ name: "Aslam Hakim/DM" }],
+    "Joypurhat Sadar": [{ name: "Shishir Ranjan/DM" }],
+  },
+  "SILATECH/PROMISE": {
+    "Barishal" : [{ name: "Rupash Biswas/DM" }],
+    "Patkelgatha" : [{ name: "Golam Rasul/DM" }],
+    "Bagerhat" : [{ name: "Mizanur Rahman/DM" }],
+    "Mithapukur" : [{ name: "Mominul Islam/DM" }],
+    "Lalpur" : [{ name: "Hafejur Rahman/DM" }],
+    "Joypurhat Sadar" : [{ name: "Firoz Ahmed/DM" }],
+    "Dakshin Surma" : [{ name: "Mazharul Haque/DM" }],
+    "Sreemangal" : [{ name: "Asmaul Hosna/DM" }]
+  },
+  "PROSPER": {
+    "Cumilla": [{ name: "Dharma Narayan/ZM" }],
+    "Feni": [{ name: "Dharma Narayan/ZM" }],
+    "Pashlish": [{ name: "Dharma Narayan/ZM" }],
+    "Dhaka": [{ name: "Dharma Narayan/ZM" }],
+    "Mymensingh": [{ name: "Mostafizur Rahman/ZM" }],
+    "Sreemangal": [{ name: "Mostafizur Rahman/ZM" }],
+    "Gaibandha": [{ name: "Mostafizur Rahman/ZM" }],
+    "Bogra": [{ name: "Mostafizur Rahman/ZM" }]
+  },
   "STAR BRAC": [
     { name: "Khaled Mahmud/ZM" }
   ],
@@ -86,13 +92,13 @@ const secondSupervisors = {
     { name: "Sudipta Kumar/DM" },
     { name: "Tanjila Sheikh/DM" }
   ],
-  "RETAIL SALES": [
-    { name: "Biswajit Roy/DM" },
-    { name: "Abdul Momin/DM" },
-    { name: "Shayed Amad/DM" },
-    { name: "Ayesha Siddika/DM" },
-    { name: "Rownak Jahan/DM" }
-  ]
+  "RETAIL SALES": {
+    "RS Daulatpur Center": [{ name: "Biswajit Roy/DM" }],
+    "RS Pallabi Center": [{ name: "Abdul Momin/DM" }],
+    "RS Amborkhana Center": [{ name: "Shayed Amad/DM" }],
+    "RS Panchlaish Center": [{ name: "Ayesha Siddika/DM" }],
+    "RS Abdullahpur Center": [{ name: "Rownak Jahan/DM" }]
+  }
 };
 
 export default secondSupervisors;
