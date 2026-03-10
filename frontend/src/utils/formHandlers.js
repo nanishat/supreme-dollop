@@ -51,8 +51,12 @@ export const handleCascadeChange = (field, value, setFormData, setErrors) => {
     } else if (field === 'zonalArea') {
       updates.dmArea = '';
       updates.branchName = '';
+      updates.supervisor1Name = '';
+      updates.supervisor2Name = '';
     } else if (field === 'dmArea') {
       updates.branchName = '';
+      updates.supervisor1Name = '';
+      updates.supervisor2Name = '';
     } else if (field === 'branchName') {
       // districtName removed from form
     }

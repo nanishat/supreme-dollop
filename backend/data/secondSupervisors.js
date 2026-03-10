@@ -20,15 +20,23 @@ const secondSupervisors = {
     "Nilphamari": [{ name: "Nasir Uddin/RM" }],
     "Narayanganj": [{ name: "Nasir Uddin/RM" }]
   },
-  "Care Giver for Japan": [
-    { name: "Abdullah Al Mamun/HO" }
-  ],
-  "PISD": [
-    { name: "Sharif Ahamed Nayem/HO" }
-  ],
-  "Govt": [
-    { name: "Nasir Uddin/RM" }
-  ],
+  "Care Giver for Japan": {
+    "Dhaka": [{ name: "Nasir Uddin/RM" }],
+    "Haluaghat": [{ name: " Abdullah Al Mamun/HO" }],
+    "Narayanganj": [{ name: " Abdullah Al Mamun/HO" }],
+    "Mirsharai": [{ name: " Abdullah Al Mamun/HO" }]
+  },
+  "PISD": {
+    "Dhaka": [{ name: "Sharif Ahamed Nayem/HO" }]
+  },
+  "Govt": {
+    "Dhaka": [{ name: "Nasir Uddin/RM" }],
+    "Nilphamari": {
+      "BISD Nilphamari 1": [{ name: "Nasir Uddin/RM" }],
+      "BISD Nilphamari 2": [{ name: "Nasir Uddin/RM" }],
+    },
+    "Narayanganj": [{ name: "Nasir Uddin/RM" }]
+  },
   "SILATECH/ED": [
     { name: "Aslam Hakim/DM" },
     { name: "Shishir Ranjan/DM" },

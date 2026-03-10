@@ -3,8 +3,8 @@ import { getFirstSupervisorsForProject, getSecondSupervisorsForProject } from '.
 
 export default function ReporterInformation({ formData, errors, onChange, onCascade, project }) {
   // derive supervisor lists; first supervisor cascades from second supervisor
-  const firstSupervisors = project ? getFirstSupervisorsForProject(project, formData.dmArea) : [];
-  const secondSupervisors = project ? getSecondSupervisorsForProject(project, formData.dmArea) : [];
+  const firstSupervisors = formData.branchName ? getFirstSupervisorsForProject(project, formData.dmArea, formData.branchName) : [];
+  const secondSupervisors = formData.branchName ? getSecondSupervisorsForProject(project, formData.dmArea, formData.branchName) : [];
 
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
@@ -110,7 +110,7 @@ export default function ReporterInformation({ formData, errors, onChange, onCasc
             name="supervisor1Name"
             value={formData.supervisor1Name}
             onChange={onChange}
-            disabled={!project}
+            disabled={!formData.branchName}
             className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.supervisor1Name ? 'border-red-500' : 'border-gray-300'
             }`}
@@ -141,7 +141,7 @@ export default function ReporterInformation({ formData, errors, onChange, onCasc
               onChange(e);
               if (onCascade) onCascade('supervisor2Name', e.target.value);
             }}
-            disabled={!project}
+            disabled={!formData.branchName}
             className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none focus:z-50 disabled:bg-gray-100 disabled:cursor-not-allowed ${
               errors.supervisor2Name ? 'border-red-500' : 'border-gray-300'
             }`}

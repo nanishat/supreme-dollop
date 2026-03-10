@@ -21,19 +21,21 @@ const firstSupervisors = {
     "Narayanganj": [{ name: "Shopan Ali/AL" }]
   },
   "Care Giver for Japan": {
-    "Dhaka": [{ name: "Jafar Ahmed/HO" }],
-    "Haluaghat": [{ name: "Shopan Ali/AL" }],
-    "Narayanganj": [{ name: "Yousuf/CL" }],
-    "Mirsharai": []
+    "Dhaka": [{ name: "Nazrul Islam/INST" }],
+    "Haluaghat": [{ name: "Jafar Ahmed/HO" }],
+    "Narayanganj": [{ name: "Shopan Ali/AL" }],
+    "Mirsharai": [{ name: "Yousuf/CL" }]
   },
   "PISD": {
     "Dhaka": [{ name: "Sharif Ahamed Nayem/HO" }]
   },
   "Govt": {
     "Dhaka": [{ name: "Nazrul Islam/INST" }],
-    "Nilphamari": [{ name: "Tumpa Wadud/CL" }],
-    "Narayanganj": [{ name: "Rayhan Kabir/CL" }],
-    "Mirsharai": [{ name: "Shopan Ali/AL" }]
+    "Nilphamari": {
+      "BISD Nilphamari 1": [{ name: "Tumpa Wadud/CL" }],
+      "BISD Nilphamari 2": [{ name: "Rayhan Kabir/CL" }],
+    },
+    "Narayanganj": [{ name: "Shopan Ali/AL" }]
   },
   // For projects with 'N/A' zonal area, supervisors are listed directly under the project
   "SILATECH/ED": [
@@ -43,20 +45,6 @@ const firstSupervisors = {
     { name: "Mohammad Omar Sharif/Instructor"},
     { name: "Mostofa Sazid/INST" },
     { name: "Hasanur Rahman" }
-  ],
-  "Care Giver for Japan": [
-    { name: "Jafar Ahmed/HO" },
-    { name: "Shopan Ali/AL" },
-    { name: "Yousuf/CL" },
-  ],
-  "PISD": [
-    { name: "Sharif Ahamed Nayem/HO" }
-  ],
-  "Govt": [
-    { name: "Nazrul Islam/INST" },
-    { name: "Tumpa Wadud/CL" },
-    { name: "Rayhan Kabir/CL" },
-    { name: "Shopan Ali/AL" }
   ],
   "SILATECH/ED": [
     { name: "Aslam Hakim/DM" },

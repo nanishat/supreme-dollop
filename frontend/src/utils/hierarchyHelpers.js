@@ -89,9 +89,10 @@ export const getSupervisorsForProject = (project) => {
  * Get first supervisors available for the selected project
  * @param {string} project - The selected project
  * @param {string} dmArea - The selected DM area (optional, for nested structures)
+ * @param {string} branchName - The selected branch name (optional, for nested branch structures)
  * @returns {Array} - List of first supervisors with name only
  */
-export const getFirstSupervisorsForProject = (project, dmArea = '') => {
+export const getFirstSupervisorsForProject = (project, dmArea = '', branchName = '') => {
   if (!project) return [];
   
   const projectData = sdpData.firstSupervisors[project];
@@ -102,10 +103,20 @@ export const getFirstSupervisorsForProject = (project, dmArea = '') => {
     return projectData;
   }
   
-  // If projectData is an object (nested by DM area), get supervisors for the DM area
+  // If projectData is an object (nested by DM area)
   if (dmArea && projectData[dmArea]) {
-    const supervisors = projectData[dmArea];
-    return Array.isArray(supervisors) ? supervisors : [];
+    const dmAreaData = projectData[dmArea];
+    
+    // If dmAreaData is an array, return it directly
+    if (Array.isArray(dmAreaData)) {
+      return dmAreaData;
+    }
+    
+    // If dmAreaData is an object with branches and branchName is provided
+    if (branchName && dmAreaData[branchName]) {
+      const supervisors = dmAreaData[branchName];
+      return Array.isArray(supervisors) ? supervisors : [];
+    }
   }
   
   return [];
@@ -115,9 +126,10 @@ export const getFirstSupervisorsForProject = (project, dmArea = '') => {
  * Get second supervisors available for the selected project
  * @param {string} project - The selected project
  * @param {string} dmArea - The selected DM area (optional, for nested structures)
+ * @param {string} branchName - The selected branch name (optional, for nested branch structures)
  * @returns {Array} - List of second supervisors with name only
  */
-export const getSecondSupervisorsForProject = (project, dmArea = '') => {
+export const getSecondSupervisorsForProject = (project, dmArea = '', branchName = '') => {
   if (!project) return [];
   
   const projectData = sdpData.secondSupervisors[project];
@@ -128,10 +140,20 @@ export const getSecondSupervisorsForProject = (project, dmArea = '') => {
     return projectData;
   }
   
-  // If projectData is an object (nested by DM area), get supervisors for the DM area
+  // If projectData is an object (nested by DM area)
   if (dmArea && projectData[dmArea]) {
-    const supervisors = projectData[dmArea];
-    return Array.isArray(supervisors) ? supervisors : [];
+    const dmAreaData = projectData[dmArea];
+    
+    // If dmAreaData is an array, return it directly
+    if (Array.isArray(dmAreaData)) {
+      return dmAreaData;
+    }
+    
+    // If dmAreaData is an object with branches and branchName is provided
+    if (branchName && dmAreaData[branchName]) {
+      const supervisors = dmAreaData[branchName];
+      return Array.isArray(supervisors) ? supervisors : [];
+    }
   }
   
   return [];
