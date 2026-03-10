@@ -3,8 +3,8 @@ import { getFirstSupervisorsForProject, getSecondSupervisorsForProject } from '.
 
 export default function ReporterInformation({ formData, errors, onChange, onCascade, project }) {
   // derive supervisor lists; first supervisor cascades from second supervisor
-  const firstSupervisors = project ? getFirstSupervisorsForProject(project) : [];
-  const secondSupervisors = project ? getSecondSupervisorsForProject(project) : [];
+  const firstSupervisors = project ? getFirstSupervisorsForProject(project, formData.dmArea) : [];
+  const secondSupervisors = project ? getSecondSupervisorsForProject(project, formData.dmArea) : [];
 
   return (
     <section className="bg-white rounded-lg shadow-md p-6">

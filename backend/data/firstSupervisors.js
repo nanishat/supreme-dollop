@@ -4,18 +4,45 @@
  */
 
 const firstSupervisors = {
-  "BISD IT": [
+  "BISD IT": {
+    "Dhaka": [{ name: "Nazrul Islam/INST" }],
+    "Joldhaka": [{ name: "Hasanur Rahman" }],
+    "Chattogram": [{ name: "Lokman Hossan/INST" }],
+    "Cumilla": [{ name: "Mehedi Hasan/INST/CL" }],
+    "Halishahar": [{ name: "Mohammad Omar Sharif/Instructor" }],
+    "Sylhet": [{ name: "Mostofa Sazid/INST" }],
+    "Rangpur": [{ name: "Sohel Miah/AM" }]
+  },
+  "BISD TVET": {
+    "Dhaka": [{ name: "Nazrul Islam/INST" }],
+    "Manikganj": [{ name: "Masum Billah/CL" }],
+    "Mirsharai": [{ name: "Yousuf/CL" }],
+    "Nilphamari": [{ name: "Tumpa Wadud/CL" }],
+    "Narayanganj": [{ name: "Shopan Ali/AL" }]
+  },
+  "Care Giver for Japan": {
+    "Dhaka": [{ name: "Jafar Ahmed/HO" }],
+    "Haluaghat": [{ name: "Shopan Ali/AL" }],
+    "Narayanganj": [{ name: "Yousuf/CL" }],
+    "Mirsharai": []
+  },
+  "PISD": {
+    "Dhaka": [{ name: "Sharif Ahamed Nayem/HO" }]
+  },
+  "Govt": {
+    "Dhaka": [{ name: "Nazrul Islam/INST" }],
+    "Nilphamari": [{ name: "Tumpa Wadud/CL" }],
+    "Narayanganj": [{ name: "Rayhan Kabir/CL" }],
+    "Mirsharai": [{ name: "Shopan Ali/AL" }]
+  },
+  // For projects with 'N/A' zonal area, supervisors are listed directly under the project
+  "SILATECH/ED": [
+    { name: "Aslam Hakim/DM" },
     { name: "Lokman Hossan/INST" },
     { name: "Mehedi Hasan/INST/CL" },
     { name: "Mohammad Omar Sharif/Instructor"},
     { name: "Mostofa Sazid/INST" },
     { name: "Hasanur Rahman" }
-  ],
-  "BISD TVET": [
-    { name: "Nazrul Islam/INST"},
-    { name: "Yousuf/CL" },
-    { name: "Tumpa Wadud/CL" },
-    { name: "Shopan Ali/AL" }
   ],
   "Care Giver for Japan": [
     { name: "Jafar Ahmed/HO" },

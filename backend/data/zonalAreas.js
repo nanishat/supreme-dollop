@@ -43,7 +43,7 @@ const zonalArea = {
  */
 const projectDmAreaMapping = {
   // ISD projects
-  "BISD IT": ["Dhaka", "Chattogram", "Cumilla", "Halishahar", "Sylhet", "Rangpur"],
+  "BISD IT": ["Dhaka", "Joldhaka", "Chattogram", "Cumilla", "Halishahar", "Sylhet", "Rangpur"],
   "BISD TVET": ["Dhaka", "Manikganj", "Mirsharai", "Nilphamari", "Narayanganj"],
   "Care Giver for Japan": ["Dhaka", "Haluaghat", "Narayanganj", "Mirsharai"],
   "PISD": ["Dhaka"],

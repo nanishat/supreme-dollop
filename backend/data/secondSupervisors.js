@@ -4,12 +4,22 @@
  */
 
 const secondSupervisors = {
-  "BISD IT": [
-    { name: "Sohel Miah/AM" }
-  ],
-  "BISD TVET": [
-    { name: "Nasir Uddin/RM"}
-  ],
+  "BISD IT": {
+    "Dhaka": [{ name: "Nasir Uddin/RM" }],
+    "Joldhaka": [{ name: "Sohel Miah/AM" }],
+    "Chattogram": [{ name: "Sohel Miah/AM" }],
+    "Cumilla": [{ name: "Sohel Miah/AM/CL" }],
+    "Halishahar": [{ name: "Sohel Miah/AM" }],
+    "Sylhet": [{ name: "Sohel Miah/AM" }],
+    "Rangpur": [{ name: "Sohel Miah/AM" }]
+  },
+  "BISD TVET": {
+    "Dhaka": [{ name: "Nasir Uddin/RM" }],
+    "Manikganj": [{ name: "Nasir Uddin/RM" }],
+    "Mirsharai": [{ name: "Nasir Uddin/RM" }],
+    "Nilphamari": [{ name: "Nasir Uddin/RM" }],
+    "Narayanganj": [{ name: "Nasir Uddin/RM" }]
+  },
   "Care Giver for Japan": [
     { name: "Abdullah Al Mamun/HO" }
   ],

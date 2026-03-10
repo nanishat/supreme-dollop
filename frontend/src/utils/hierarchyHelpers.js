@@ -88,21 +88,53 @@ export const getSupervisorsForProject = (project) => {
 /**
  * Get first supervisors available for the selected project
  * @param {string} project - The selected project
+ * @param {string} dmArea - The selected DM area (optional, for nested structures)
  * @returns {Array} - List of first supervisors with name only
  */
-export const getFirstSupervisorsForProject = (project) => {
+export const getFirstSupervisorsForProject = (project, dmArea = '') => {
   if (!project) return [];
-  return sdpData.firstSupervisors[project] || [];
+  
+  const projectData = sdpData.firstSupervisors[project];
+  if (!projectData) return [];
+  
+  // If projectData is an array, return it directly
+  if (Array.isArray(projectData)) {
+    return projectData;
+  }
+  
+  // If projectData is an object (nested by DM area), get supervisors for the DM area
+  if (dmArea && projectData[dmArea]) {
+    const supervisors = projectData[dmArea];
+    return Array.isArray(supervisors) ? supervisors : [];
+  }
+  
+  return [];
 };
 
 /**
  * Get second supervisors available for the selected project
  * @param {string} project - The selected project
+ * @param {string} dmArea - The selected DM area (optional, for nested structures)
  * @returns {Array} - List of second supervisors with name only
  */
-export const getSecondSupervisorsForProject = (project) => {
+export const getSecondSupervisorsForProject = (project, dmArea = '') => {
   if (!project) return [];
-  return sdpData.secondSupervisors[project] || [];
+  
+  const projectData = sdpData.secondSupervisors[project];
+  if (!projectData) return [];
+  
+  // If projectData is an array, return it directly
+  if (Array.isArray(projectData)) {
+    return projectData;
+  }
+  
+  // If projectData is an object (nested by DM area), get supervisors for the DM area
+  if (dmArea && projectData[dmArea]) {
+    const supervisors = projectData[dmArea];
+    return Array.isArray(supervisors) ? supervisors : [];
+  }
+  
+  return [];
 };
 
 /**

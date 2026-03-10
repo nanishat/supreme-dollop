@@ -398,7 +398,8 @@ const branches = {
   /* N/A cases (directly connected to DM areas) */
   // ISD projects
   "BISD IT": {
-    "Dhaka": ["BISD Jaldhaka", "BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Dhaka": ["BISD Ashkona 1", "BISD Ashkona 2", "BISD Ashkona 3", "BISD Ashkona 4", "BISD Ashkona 5", "BISD Ashkona 6", "BISD Ashkona 7"],
+    "Joldhaka": ["BISD Joldhaka"],
     "Chattogram": ["BISD Chattogram"],
     "Cumilla": ["BISD Cumilla"],
     "Halishahar": ["BISD Halishahar"],
