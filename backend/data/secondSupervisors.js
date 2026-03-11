@@ -64,34 +64,67 @@ const secondSupervisors = {
   "STAR BRAC": [
     { name: "Khaled Mahmud/ZM" }
   ],
-  "STAR IDP": [
-    { name: "Bijoy Tigga/RM" },
-    { name: "Juwel Hossain/RM" },
-    { name: "Easir Arafat/RM" },
-    { name: "Jonas Soren/RM" },
-    { name: "Elias Farazi/RM" },
-    { name: "Nayan Kumar/RM" }
-  ],
-  "STAR PNGO": [
-    { name: "Farhad Hossain/ZM" },
-    { name: "Afzal Hossain/ZM" }
-  ],
-  "STAR SDF": [
-    { name: "Krishna Roy/DM" },
-    { name: "Sujon Shahin/DM" },
-    { name: "Nayan Kumar/DM" }
-  ],
-  "STAR SPA": [
-    { name: "Khaled Mahmud/ZM" },
-    { name: "Utpal Biswas/ZM" },
-    { name: "Hasina Akhter/ZM" }
-  ],
-  "STAR UPG": [
-    { name: "Efat Zahan/DM" },
-    { name: "Saidul Islam/DM" },
-    { name: "Sudipta Kumar/DM" },
-    { name: "Tanjila Sheikh/DM" }
-  ],
+  "STAR IDP": { 
+    "Dinajpur Sadar": [{ name: "Bijoy Tigga/RM" }],
+    "Birol": [{ name: "Bijoy Tigga/RM" }],
+    "Bochagonj": [{ name: "Bijoy Tigga/RM" }],
+    "Kaharol": [{ name: "Bijoy Tigga/RM" }],
+    "Birganj": [{ name: "Bijoy Tigga/RM" }],
+    "Khansama": [{ name: "Bijoy Tigga/RM" }],
+    "Cirirbandar": [{ name: "Juwel Hossain/RM" }],
+    "Fulbari": [{ name: "Juwel Hossain/RM" }],
+    "Birampur": [{ name: "Juwel Hossain/RM" }],
+    "Nawabganj": [{ name: "Juwel Hossain/RM" }],
+    "Ghoraghat": [{ name: "Juwel Hossain/RM" }],
+    "Hakimpur": [{ name: "Juwel Hossain/RM" }],
+    "Tanore": [{ name: "Easir Arafat/RM" }],
+    "Niamothpur": [{ name: "Easir Arafat/RM" }],
+    "Mohadevpur": [{ name: "Jonas Soren/RM" }],
+    "Patnitala": [{ name: "Jonas Soren/RM" }],
+    "Paikgacha": [{ name: "Elias Farazi/RM" }],
+    "Koyra": [{ name: "Elias Farazi/RM" }],
+    "Dumuria": [{ name: "Elias Farazi/RM" }],
+    "Dakop": [{ name: "Elias Farazi/RM" }],
+    "Rupsha": [{ name: "Elias Farazi/RM" }],
+    "Digholia": [{ name: "Elias Farazi/RM" }],
+    "Kolaroa": [{ name: "Nayan Kumar/RM" }],
+    "Debhata": [{ name: "Nayan Kumar/RM" }],
+    "Shyamnagar": [{ name: "Nayan Kumar/RM" }],
+    "Assasuni": [{ name: "Nayan Kumar/RM" }],
+    "Tala": [{ name: "Nayan Kumar/RM" }]
+  },
+  "STAR PNGO": {
+    "Barguna": [{ name: "Farhad Hossain/ZM" }],
+    "Chapainawabganj": [{ name: "Farhad Hossain/ZM" }],
+    "Polashbari": [{ name: "Farhad Hossain/ZM" }],
+    "Mymensingh": [{ name: "Afzal Hossain/ZM" }],
+    "Sherpur": [{ name: "Afzal Hossain/ZM" }],
+    "Sreemangal": [{ name: "Afzal Hossain/ZM" }],
+    "Rangamati": [{ name: "Afzal Hossain/ZM" }]
+  },
+  "STAR SDF": {
+    "Indurkani": [{ name: "Krishna Roy/DM" }],
+    "Nilphamari": [{ name: "Sujon Shahin/DM" }],
+    "Haluaghat": [{ name: "Nayan Kumar/DM" }]
+  },
+  "STAR SPA": {
+    "Jamalpur": [{ name: "Khaled Mahmud/ZM" }],
+    "Moulvibazar": [{ name: "Khaled Mahmud/ZM" }],
+    "Patuakhali": [{ name: "Utpal Biswas/ZM" }],
+    "Barishal Sadar": [{ name: "Utpal Biswas/ZM" }],
+    "Bagerhat": [{ name: "Utpal Biswas/ZM" }],
+    "Jashore": [{ name: "Utpal Biswas/ZM" }],
+    "Ullapara": [{ name: "Hasina Akhter/ZM" }],
+    "Joypurhat": [{ name: "Hasina Akhter/ZM" }],
+    "Lalmonirhat": [{ name: "Hasina Akhter/ZM" }],
+    "Thakurgaon": [{ name: "Hasina Akhter/ZM" }]
+  },
+  "STAR UPG": {
+    "Azampur": [{ name: "Efat Zahan/DM" }],
+    "Pallabi": [{ name: "Saidul Islam/DM" }],
+    "Panchlaish": [{ name: "Sudipta Kumar/DM" }],
+    "Bogura": [{ name: "Tanjila Sheikh/DM" }]
+  },
   "RETAIL SALES": {
     "RS Daulatpur Center": [{ name: "Biswajit Roy/DM" }],
     "RS Pallabi Center": [{ name: "Abdul Momin/DM" }],

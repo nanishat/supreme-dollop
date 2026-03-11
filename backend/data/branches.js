@@ -52,7 +52,7 @@ const branches = {
       "STAR Bakerganj",
       "STAR Mehendiganj",
     ],
-    "Barisal sadar": [
+    "Barishal Sadar": [
       "STAR Barishal Sadar",
       "STAR Agailjhara",
       "STAR Rajapur",
@@ -147,7 +147,7 @@ const branches = {
       "B2B Katla 2",
       "B2B Birampur",
     ],
-    "Nawabgonj": [
+    "Nawabganj": [
       "B2B Bhaduria",
       "B2B Nawabganj",
     ],
@@ -270,7 +270,7 @@ const branches = {
       "STAR PNGO Sreebardi"
     ],
     Sreemangal: [
-      "STAR PNGO Chhatak",
+      "STAR PNGO Chatak",
       "STAR PNGO Gobindaganj Chatak",
       "STAR PNGO Shantiganj",
       "STAR PNGO Jagannathpur",
@@ -281,7 +281,7 @@ const branches = {
       "STAR PNGO Bahubal",
       "STAR PNGO Nobiganj"
     ],
-    Ramgamati: [
+    Rangamati: [
       "STAR PNGO Khagrachhari Sadar",
       "STAR PNGO Dighinala",
       "STAR PNGO Panchhari",

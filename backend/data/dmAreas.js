@@ -27,7 +27,7 @@ const dmAreas = {
 
   "STAR SPA": {
     Noakhali: ["Jamalpur", "Moulvibazar"],
-    Barishal: ["Patuakhali", "Barisal sadar", "Bagerhat", "Jessore"],
+    Barishal: ["Patuakhali", "Barishal Sadar", "Bagerhat", "Jessore"],
     Rangpur: ["Ullapara", "Joypurhat", "Lalmonirhat", "Thakurgaon"],
   },
   
