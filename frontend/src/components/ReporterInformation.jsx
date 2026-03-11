@@ -70,7 +70,7 @@ export default function ReporterInformation({ formData, errors, onChange, onCasc
             className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.reporterName ? 'border-red-500' : 'border-gray-300'
             }`}
-            placeholder="Name"
+            placeholder="Enter your name"
           />
           {errors.reporterName && (
             <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -92,7 +92,7 @@ export default function ReporterInformation({ formData, errors, onChange, onCasc
             className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none ${
               errors.reporterPin ? 'border-red-500' : 'border-gray-300'
             }`}
-            placeholder="PIN"
+            placeholder="Enter your pin"
           />
           {errors.reporterPin && (
             <p className="text-red-500 text-xs mt-1 flex items-center gap-1">

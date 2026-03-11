@@ -17,13 +17,25 @@ const errorTypes = [
   "Selection/Deselection",
   "Batch Change",
   "Missing/Incorrect Photo",
-  "Other",
-];*/
+  "Other"
+];
 
 const errorTypes = [
   "Wrong Input (Spelling/Names/Gender/Disability/Address/etc.)",
   "Technical Issue/System Troubleshooting",
   "Operational Decision (Batch Change, Selection/Deselection, Fee, etc.)",
   "Exception/Other (Photo, Trade Name, Birth Certificate/NID, etc.)",
+];
+*/
+
+const errorTypes = [
+  "Date of Birth/Age",
+  "Fee",
+  "Wrong Input (Spelling/Names/Gender/Disability/Address/etc.)",
+  "Trade Name",
+  "Wrong MCP Placement",
+  "Birth Certificate/NID Number",
+  "Selection/Deselection",
+  "Batch Change"
 ];
 export { phases, errorTypes };
