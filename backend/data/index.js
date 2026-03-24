@@ -13,7 +13,7 @@
  * - dmAreas: Mapping of zonal areas to DM areas
  * - branches: Mapping of DM areas to branches
  * - phases: Form phase options
- * - errorTypes: Form error type options
+ * - errorCategories: Form error categories with cascading error types
  */
 
 import components from './components.js';
@@ -23,7 +23,7 @@ import dmAreas from './dmAreas.js';
 import branches from './branches.js';
 import firstSupervisors from './firstSupervisors.js';
 import secondSupervisors from './secondSupervisors.js';
-import { phases, errorTypes } from './formConfig.js';
+import { phases, errorCategories } from './formConfig.js';
 
 const sdpData = {
   components,
@@ -35,7 +35,7 @@ const sdpData = {
   firstSupervisors,
   secondSupervisors,
   phases,
-  errorTypes,
+  errorCategories,
 };
 
 export default sdpData;

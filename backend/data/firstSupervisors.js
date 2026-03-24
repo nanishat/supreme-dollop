@@ -11,7 +11,7 @@ const firstSupervisors = {
     "Cumilla": [{ name: "Mehedi Hasan/INST/CL" }],
     "Halishahar": [{ name: "Mohammad Omar Sharif/Instructor" }],
     "Sylhet": [{ name: "Mostofa Sazid/INST" }],
-    "Rangpur": [{ name: "Sohel Miah/AM" }]
+    "Rangpur": [{ name: "Ragib Pashan/INST" }]
   },
   "BISD TVET": {
     "Dhaka": [{ name: "Nazrul Islam/INST" }],

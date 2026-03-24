@@ -14,6 +14,7 @@ export const getInitialFormData = () => ({
   dmArea: '',
   branchName: '',
   phase: '',
+  errorCategory: '',
   errorType: '',
   issueDescription: '',
   attachment: null

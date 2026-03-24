@@ -10,11 +10,21 @@
  */
 export const handleInputChange = (e, setFormData, setErrors) => {
   const { name, value } = e.target;
-  setFormData(prev => ({ ...prev, [name]: value }));
+  
+  // If errorCategory changes, reset errorType
+  if (name === 'errorCategory') {
+    setFormData(prev => ({ ...prev, [name]: value, errorType: '' }));
+  } else {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  }
+  
   if (setErrors) {
     setErrors(prev => {
       const updated = { ...prev };
       delete updated[name];
+      if (name === 'errorCategory') {
+        delete updated.errorType;
+      }
       return updated;
     });
   }

@@ -54,6 +54,7 @@ export const validateForm = (formData) => {
 
   // Issue info validation
   if (!formData.phase) newErrors.phase = 'Phase is required';
+  if (!formData.errorCategory) newErrors.errorCategory = 'Error Category is required';
   if (!formData.errorType) newErrors.errorType = 'Error Type is required';
   if (!formData.issueDescription) {
     newErrors.issueDescription = 'Issue description is required';
