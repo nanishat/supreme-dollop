@@ -11,6 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({ origin: process.env.CORS_ORIGIN || true }));
 app.use(express.json({ limit: "1mb" }));
 
+// Serve static files from the frontend build directory (production)
+const frontendDistPath = path.join(__dirname, "../frontend/dist");
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
+}
+
 function loadServiceAccount() {
   // Priority: GOOGLE_SERVICE_ACCOUNT_JSON -> GOOGLE_SERVICE_ACCOUNT_KEY_PATH -> backend/service-account-key.json (if present)
   if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
@@ -118,6 +124,16 @@ app.post("/api/submit", async (req, res) => {
 });
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
+
+// Serve index.html for all non-API routes (React Router support)
+app.get("*", (req, res) => {
+  const indexPath = path.join(__dirname, "../frontend/dist/index.html");
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).json({ message: "Frontend not built. Run 'npm run build'" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Backend listening on port ${PORT}`);

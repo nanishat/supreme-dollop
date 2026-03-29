@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: supreme-dollop
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: GOOGLE_SHEET_ID
+        fromDatabase:
+          name: supreme-dollop
+          property: GOOGLE_SHEET_ID
+      - key: GOOGLE_SHEET_NAME
+        value: Sheet1
+      - key: GOOGLE_SERVICE_ACCOUNT_JSON
+        fromDatabase:
+          name: supreme-dollop
+          property: GOOGLE_SERVICE_ACCOUNT_JSON
+      - key: CORS_ORIGIN
+        value: "*"

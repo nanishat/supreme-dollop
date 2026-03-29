@@ -1,0 +1,22 @@
+{
+  "name": "supreme-dollop",
+  "version": "1.0.0",
+  "description": "TaroWorks Troubleshooting Platform - Full Stack Application",
+  "main": "backend/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install && cd ..",
+    "build": "cd frontend && npm run build && cd .. && node backend/server.js",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start": "node backend/server.js",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "lint": "cd frontend && npm run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": "18.x || 20.x"
+  }
+}
