@@ -394,11 +394,11 @@ const branches = {
 
   /* RETAIL SALES */
   "RETAIL SALES": {
-    "RS Daulatpur Center": ["RS Daulatpur 1", "RS Daulatpur 2", "RS Daulatpur 3", "RS Daulatpur 4"],
-    "RS Pallabi Center": ["RS Pallabi 1", "RS Pallabi 2", "RS Pallabi 3", "RS Pallabi 4"],
-    "RS Amborkhana Center": ["RS Amborkhana 1", "RS Amborkhana 2", "RS Amborkhana 3", "RS Amborkhana 4"],
-    "RS Panchlaish Center": ["RS Panchlaish 1", "RS Panchlaish 2", "RS Panchlaish 3", "RS Panchlaish 4"],
-    "RS Abdullahpur Center": ["RS Abdullahpur 1", "RS Abdullahpur 2", "RS Abdullahpur 3", "RS Abdullahpur 4"],
+    "RS Daulatpur Center": ["RS Daulatpur Center"],
+    "RS Pallabi Center": ["RS Pallabi Center"],
+    "RS Amborkhana Center": ["RS Amborkhana Center"],
+    "RS Panchlaish Center": ["RS Panchlaish Center"],
+    "RS Abdullahpur Center": ["RS Abdullahpur Center"],
   },
 
 
