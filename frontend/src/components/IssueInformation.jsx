@@ -157,14 +157,14 @@ export default function IssueInformation({
           <button
             type="button"
             onClick={onReset}
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+            className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:cursor-pointer"
           >
             Reset
           </button>
 
           <button
             type="submit"
-            className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-700"
+            className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-700 hover:cursor-pointer"
           >
             Submit Report
           </button>
