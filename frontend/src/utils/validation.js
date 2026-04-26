@@ -10,7 +10,7 @@ const EMAIL_REGEX = /\S+@\S+\.\S+/;
 /**
  * Issue description validation regex - checks for required ID patterns
  */
-const ID_REGEX = /(EID-\d{6}|BISD-\d{6}|Lrnr-\d{9}|MCP-\d{9})/;
+const ID_REGEX = /(EID-\d{6}|BISD-\d{6}|Lrnr-\d{9}|MCP-\d{9})|CLNT-\d{8}/;
 
 /**
  * Validate issue description for required ID patterns
