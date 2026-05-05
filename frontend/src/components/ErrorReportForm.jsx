@@ -8,7 +8,7 @@ import Footer from './Footer';
 import { getInitialFormData } from '../utils/formDefaults';
 import { handleInputChange, handleCascadeChange, handleFileChange, removeFile } from '../utils/formHandlers';
 import { validateForm } from '../utils/validation';
-import { handleFormSubmission } from '../utils/api';
+import { handleFormSubmissionWithFile } from '../utils/api';
 
 export default function ErrorReportForm() {
   const [formData, setFormData] = useState(getInitialFormData());
@@ -32,9 +32,10 @@ export default function ErrorReportForm() {
       return;
     }
 
-    const success = await handleFormSubmission(formData, setErrors);
+    // Submit form with file (both via Service Account)
+    const result = await handleFormSubmissionWithFile(formData, formData.attachment, setErrors);
     
-    if (success) {
+    if (result.success) {
       setSubmitted(true);
 
       // Reset form after 3 seconds
