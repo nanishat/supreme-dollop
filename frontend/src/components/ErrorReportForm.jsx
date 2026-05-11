@@ -14,6 +14,7 @@ export default function ErrorReportForm() {
   const [formData, setFormData] = useState(getInitialFormData());
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => handleInputChange(e, setFormData, setErrors);
 
@@ -32,6 +33,9 @@ export default function ErrorReportForm() {
       return;
     }
 
+    // Prevent multiple submissions
+    setIsSubmitting(true);
+
     // Submit form with file (both via Service Account)
     const result = await handleFormSubmissionWithFile(formData, formData.attachment, setErrors);
     
@@ -42,7 +46,10 @@ export default function ErrorReportForm() {
       setTimeout(() => {
         setFormData(getInitialFormData());
         setSubmitted(false);
+        setIsSubmitting(false);
       }, 3000);
+    } else {
+      setIsSubmitting(false);
     }
   };
 
@@ -82,6 +89,7 @@ export default function ErrorReportForm() {
               onFileChange={handleFile}
               onRemoveFile={removeAttachment}
               onReset={handleReset}
+              isSubmitting={isSubmitting}
             />
           </form>
         )}

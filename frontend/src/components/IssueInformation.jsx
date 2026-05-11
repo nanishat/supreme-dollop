@@ -7,7 +7,8 @@ export default function IssueInformation({
   onChange,
   onFileChange,
   onRemoveFile,
-  onReset
+  onReset,
+  isSubmitting
 }) {
   return (
     <section className="bg-white rounded-lg shadow-md p-6">
@@ -157,16 +158,25 @@ export default function IssueInformation({
           <button
             type="button"
             onClick={onReset}
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:cursor-pointer"
+            className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting}
           >
             Reset
           </button>
 
           <button
             type="submit"
-            className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-700 hover:cursor-pointer"
+            disabled={isSubmitting}
+            className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-700 hover:cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all"
           >
-            Submit Report
+            {isSubmitting ? (
+              <>
+                <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                <span>Submitting...</span>
+              </>
+            ) : (
+              'Submit Report'
+            )}
           </button>
         </div>
       </div>
