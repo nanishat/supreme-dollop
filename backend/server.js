@@ -8,42 +8,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ============================================================================
-// CORS CONFIGURATION - Development & Production
-// ============================================================================
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    // Allowed origins for different environments
-    const allowedOrigins = [
-      "http://localhost:5173",      // Local development (Vite default)
-      "https://supreme-dollop-frontend.onrender.com", // Production frontend URL
-    ];
-
-    // For production, use environment variable if provided
-    if (process.env.PRODUCTION_FRONTEND_URL) {
-      allowedOrigins.push(process.env.PRODUCTION_FRONTEND_URL);
-    }
-
-    // Allow requests without origin header (Postman, server-to-server, cURL)
-    if (!origin) {
-      return callback(null, true);
-    }
-
-    // Check if origin is allowed
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,                // Allow cookies/authentication headers
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  maxAge: 3600,                     // Cache preflight requests for 1 hour
-};
-
-app.use(cors(corsOptions));
+app.use(cors({ origin: process.env.CORS_ORIGIN || true }));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
