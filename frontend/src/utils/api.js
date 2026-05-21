@@ -67,8 +67,9 @@ function fileToBase64(file) {
  * @throws {Error} - If the submission fails
  */
 export const submitForm = async (formData) => {
+  const baseUrl = process.env.VITE_API_URL || 'localhost:3000';
   try {
-    const response = await fetch(`/api/submit`, {
+    const response = await fetch(`${baseUrl}/api/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
