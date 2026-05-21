@@ -5,6 +5,8 @@
  * - Form submission uses Service Account (already set up)
  * - No user authentication prompts during submission
  */
+  
+const baseUrl = import.meta.env.VITE_API_URL || 'localhost:3000';
 
 /**
  * Upload file to Google Drive using OAuth 2.0 (backend)
@@ -21,7 +23,7 @@ export const uploadFile = async (file) => {
     // Convert file to base64
     const fileBase64 = await fileToBase64(file);
 
-    const response = await fetch(`/api/upload`, {
+    const response = await fetch(`${baseUrl}/api/upload`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -67,7 +69,6 @@ function fileToBase64(file) {
  * @throws {Error} - If the submission fails
  */
 export const submitForm = async (formData) => {
-  const baseUrl = import.meta.env.VITE_API_URL || 'localhost:3000';
   try {
     const response = await fetch(`${baseUrl}/api/submit`, {
       method: 'POST',
