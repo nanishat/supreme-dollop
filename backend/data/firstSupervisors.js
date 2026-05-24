@@ -115,7 +115,7 @@ const firstSupervisors = {
     "Patuakhali": [{ name: "Mustafizur Rahman/DM" }],
     "Barishal Sadar": [{ name: "Krishna Koli/DM" }],
     "Bagerhat": [{ name: "Ismail Hossen/DM" }],
-    "Jashore": [{ name: "Sobhan Shaikh/DM" }],
+    "Jessore": [{ name: "Sobhan Shaikh/DM" }],
     "Ullapara": [{ name: "Rosy Begum/DM" }],
     "Joypurhat": [{ name: "Reshma Khatun/DM" }],
     "Lalmonirhat": [{ name: "Abdur Razzaque/DM" }],

@@ -113,7 +113,7 @@ const secondSupervisors = {
     "Patuakhali": [{ name: "Utpal Biswas/ZM" }],
     "Barishal Sadar": [{ name: "Utpal Biswas/ZM" }],
     "Bagerhat": [{ name: "Utpal Biswas/ZM" }],
-    "Jashore": [{ name: "Utpal Biswas/ZM" }],
+    "Jessore": [{ name: "Utpal Biswas/ZM" }],
     "Ullapara": [{ name: "Hasina Akhter/ZM" }],
     "Joypurhat": [{ name: "Hasina Akhter/ZM" }],
     "Lalmonirhat": [{ name: "Hasina Akhter/ZM" }],
